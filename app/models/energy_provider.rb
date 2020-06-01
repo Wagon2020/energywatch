@@ -1,0 +1,2 @@
+class EnergyProvider < ApplicationRecord
+end

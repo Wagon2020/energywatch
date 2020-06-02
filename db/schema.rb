@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2020_06_02_153114) do
   enable_extension "plpgsql"
 
   create_table "appliances", force: :cascade do |t|
-    t.string "type"
+    t.string "appliance_type"
     t.float "energy_performance"
     t.bigint "user_id", null: false
-    t.bigint "smart_home_system_id", null: false
+    t.bigint "smart_home_system_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["smart_home_system_id"], name: "index_appliances_on_smart_home_system_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_153114) do
 
   create_table "smart_home_systems", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "system_type"
     t.string "username"
     t.string "password"
     t.bigint "user_id", null: false

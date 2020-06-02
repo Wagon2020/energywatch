@@ -233,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug

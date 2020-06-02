@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+# <<<<<<< HEAD
+# =======
+#   get 'pages/home'
+#   devise_for :users
+# >>>>>>> master
   root to: 'pages#home'
   get 'details', to: 'pages#details'
 

@@ -3,7 +3,7 @@ class EnergyProvidersController < ApplicationController
     @energy_provider = EnergyProvider.new(energy_provider_params)
 
     if @energy_provider.save
-      redirect_to profile_path, notice: 'Energy provided successfully added.'
+      redirect_to profile_path, notice: 'Energy provider successfully added.'
     else
       render :new
     end

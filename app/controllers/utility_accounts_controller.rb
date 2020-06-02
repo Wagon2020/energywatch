@@ -13,6 +13,6 @@ class UtilityAccountsController < ApplicationController
   private
 
   def utility_account_params
-    params.require(:utility_account).permit(all_params)
+    params.require(:utility_account).permit(:email, :username, :password, :meter_ref)
   end
 end

@@ -7,7 +7,7 @@ class SmartHomeSystem < ApplicationRecord
   has_many :appliances
 
   validates :name, presence: true
-  validates :type, presence: true, inclusion: {in: type_array}
+  validates :type, presence: true, inclusion: { in: type_array }
   validates :username, presence: true
   validates :password, presence: true
 end

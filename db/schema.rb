@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_093252) do
+ActiveRecord::Schema.define(version: 2020_06_02_153114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,10 +63,8 @@ ActiveRecord::Schema.define(version: 2020_06_02_093252) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "utility_account_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["utility_account_id"], name: "index_users_on_utility_account_id"
   end
 
   create_table "utility_accounts", force: :cascade do |t|
@@ -77,12 +75,13 @@ ActiveRecord::Schema.define(version: 2020_06_02_093252) do
     t.bigint "energy_provider_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["energy_provider_id"], name: "index_utility_accounts_on_energy_provider_id"
+    t.index ["user_id"], name: "index_utility_accounts_on_user_id"
   end
 
   add_foreign_key "appliances", "smart_home_systems"
   add_foreign_key "appliances", "users"
   add_foreign_key "smart_home_systems", "users"
-  add_foreign_key "users", "utility_accounts"
   add_foreign_key "utility_accounts", "energy_providers"
 end

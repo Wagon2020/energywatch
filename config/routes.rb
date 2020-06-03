@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'details', to: 'pages#details'
+  get 'data', to: 'pages#data'
 
   get 'profile', to: 'dashboard#profile'
   get 'overview', to: 'dashboard#overview'

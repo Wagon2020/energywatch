@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_153114) do
     t.string "username"
     t.string "password"
     t.string "meter_ref"
-    t.bigint "energy_provider_id"
+    t.bigint "energy_provider_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

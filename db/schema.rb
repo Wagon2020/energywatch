@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_153114) do
+ActiveRecord::Schema.define(version: 2020_06_03_151127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,28 @@ ActiveRecord::Schema.define(version: 2020_06_02_153114) do
     t.string "consumption_type", null: false
     t.bigint "consumption_id", null: false
     t.index ["consumption_type", "consumption_id"], name: "idx_consumption"
+  end
+
+  create_table "energy_mixes", force: :cascade do |t|
+    t.integer "biomass"
+    t.integer "fossil_brown_coal"
+    t.integer "fossil_gas"
+    t.integer "fossil_hard_coal"
+    t.integer "fossil_oil"
+    t.integer "geothermal"
+    t.integer "hydro_pumped_storage"
+    t.integer "hydro_run_of_river_poundage"
+    t.integer "hydro_water_reservoir"
+    t.integer "nuclear"
+    t.integer "other_renewable"
+    t.integer "solar"
+    t.integer "waste"
+    t.integer "wind_offshore"
+    t.integer "wind_onshore"
+    t.integer "other"
+    t.string "api_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "energy_providers", force: :cascade do |t|

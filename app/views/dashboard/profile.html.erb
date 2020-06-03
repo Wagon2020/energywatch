@@ -2,76 +2,29 @@
   <h1>My profile page</h1>
   <hr>
 
-
+  <div class="appliance-wrapper flexbox">
   <h3>Add your appliances </h3>
-    <%= simple_form_for @appliance do |f| %>
-
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-
-    <%= f.error_notification %>
-
-    <%= f.input :appliance_type %>
-
-    <%= f.input :energy_performance %>
-
-    <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applianceModal" data-whatever="@mdo">+</button>
+  </div>
   <hr>
 
+<div class="appliance-wrapper flexbox">
   <h3>Connect your smart home system </h3>
-    <%= simple_form_for @smart_home_system do |f| %>
-
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <%= f.error_notification %>
-
-    <%= f.input :name %>
-
-    <%= f.input :system_type, collection: SmartHomeSystem.type_array, as: :select %>
-
-    <%= f.input :username %>
-
-    <%= f.input :password %>
-
-    <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smartHomeModal" data-whatever="@mdo">+</button>
+</div>
   <hr>
 
+<div class="appliance-wrapper flexbox">
   <h3>Connect your utility account </h3>
-    <%= simple_form_for @utility_account do |f| %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#utilityAccModal" data-whatever="@mdo">+</button>
+</div>
 
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <%= f.error_notification %>
-
-    <%= f.input :energy_provider_id, collection: @energy_providers, as: :select %>
-
-    <!-- NB: need an option, where IF your energy provider is not in the list, ADD a new one -->
-
-    <%= f.input :email %>
-
-    <%= f.input :username %>
-
-    <%= f.input :password %>
-
-    <%= f.input :meter_ref %>
-
-    <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
   <hr>
 
+<div class="appliance-wrapper flexbox">
   <h3>Add an energy provider </h3>
-    <%= simple_form_for @energy_provider do |f| %>
-
-    <%= f.error_notification %>
-
-    <%= f.input :name %>
-
-    <%= f.input :url %>
-
-    <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#energyProvModal" data-whatever="@mdo">+</button>
+</div>
   <hr>
-
+ <%= render 'modal' %>
 </div>

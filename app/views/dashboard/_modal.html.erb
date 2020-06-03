@@ -1,0 +1,130 @@
+<div class="modal fade" id="applianceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add an Appliance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+           <%= simple_form_for @appliance do |f| %>
+
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+
+            <%= f.error_notification %>
+
+            <%= f.input :appliance_type %>
+
+            <%= f.input :energy_performance %>
+
+            <%= f.button :submit, class: "btn-primary" %>
+            <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="smartHomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Connect your Smart Home System</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for @smart_home_system do |f| %>
+
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :name %>
+
+    <%= f.input :system_type, collection: SmartHomeSystem.type_array, as: :select %>
+
+    <%= f.input :username %>
+
+    <%= f.input :password %>
+
+    <%= f.button :submit, class: "btn-primary" %>
+            <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="utilityAccModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Connect your Utility Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <%= simple_form_for @utility_account do |f| %>
+
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :energy_provider_id, collection: @energy_providers, as: :select %>
+
+    <!-- NB: need an option, where IF your energy provider is not in the list, ADD a new one -->
+
+    <%= f.input :email %>
+
+    <%= f.input :username %>
+
+    <%= f.input :password %>
+
+    <%= f.input :meter_ref %>
+
+    <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="energyProvModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Your Energy Provider</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <%= simple_form_for @energy_provider do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :name %>
+
+    <%= f.input :url %>
+
+    <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

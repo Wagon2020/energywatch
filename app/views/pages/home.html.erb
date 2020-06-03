@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+<div class="container">
+<h1>Electricity mix in MWh</h1>
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Renewable", "Fossil fuel", "Nuclear", "Other"],
+        datasets: [{
+            data: [29696, 19022, 7656, 316],
+            backgroundColor: [
+                'rgba(75, 192, 115)',
+                'rgba(255, 99, 132)',
+                'rgba(255, 206, 86)',
+                'rgba(255, 159, 64)',
+            ],
+        }],
+    },
+});
+</script>
+</div>
+

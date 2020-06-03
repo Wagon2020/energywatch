@@ -11,7 +11,7 @@ class EntsoeApi
     @date_end = Date.today.to_s.delete('-') + '2200' # returns "202006022200"
   end
 
-  def call_latest
+  def store_latest_call
     url_all = "#{@base_url}securityToken=#{@token}&documentType=#{@doc_type}&processType=#{@process_type}&in_Domain=#{@domain}&periodStart=#{@date_start}&periodEnd=#{@date_end}"
     url = open(url_all)
     data = Hash.from_xml(url)

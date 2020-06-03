@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
 
   def store
-    EntsoeApi.new.store_to_db
+    EntsoeApi.new.store_latest_call
   end
 
 end

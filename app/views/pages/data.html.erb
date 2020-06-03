@@ -1,5 +1,10 @@
 <h1>Pages#data</h1>
 <p>DATA TESTS</p>
+<%= link_to data_path do  %>
+<p>get latest data</p>
+<% EntsoeApi.new.store_latest_call %>
+<% end %>
+<hr>
 <%= @data %>
 <hr>
 <%= @donut %>

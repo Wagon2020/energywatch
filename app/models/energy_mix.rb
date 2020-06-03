@@ -1,0 +1,2 @@
+class EnergyMix < ApplicationRecord
+end

@@ -8,8 +8,12 @@ class PagesController < ApplicationController
   end
 
   def data
-    @data = EntsoeApi.new.call_latest
+    @data = EntsoeApi.new.energy_types
     @donut = EntsoeApi.new.donut
+  end
+
+  def store
+    EntsoeApi.new.store_to_db
   end
 
 end

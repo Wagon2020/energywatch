@@ -1,3 +1,13 @@
 <h1>Pages#data</h1>
 <p>DATA TESTS</p>
-<%= @data %>
+<table>
+  <tr>Time: <%= @data.first[1]["position"] %></tr>
+  <% @data.each do |type, amount|%>
+    <tr>
+      <td><%=  type %></td>
+      <td>
+        <%=  amount["quantity"] %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -10,6 +10,11 @@ class PagesController < ApplicationController
   def data
     @data = EntsoeApi.new.energy_types
     @donut = EntsoeApi.new.donut
+    @donut_array = []
+    @donut.each do |fueltype, quantity|
+      @donut_array << [fueltype, quantity]
+    end
+    gon.donut_data = @donut_array
   end
 
   def store

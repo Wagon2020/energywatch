@@ -5,7 +5,9 @@ class EnergyProvidersController < ApplicationController
     if @energy_provider.save
       redirect_to profile_path, notice: 'Energy provider successfully added.'
     else
-      render :new
+
+      profile_requirements
+      render 'dashboard/profile'
     end
   end
 
@@ -13,5 +15,12 @@ class EnergyProvidersController < ApplicationController
 
   def energy_provider_params
     params.require(:energy_provider).permit(:name, :url)
+  end
+
+  def profile_requirements
+    @appliance = Appliance.new
+    @smart_home_system = SmartHomeSystem.new
+    @utility_account = UtilityAccount.new
+    @energy_providers = EnergyProvider.all
   end
 end

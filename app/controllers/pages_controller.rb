@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def data
     @data = EntsoeApi.new.call_latest
+    @donut = EntsoeApi.new.donut
   end
 
 end

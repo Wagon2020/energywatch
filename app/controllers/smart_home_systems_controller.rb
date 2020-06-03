@@ -6,7 +6,9 @@ class SmartHomeSystemsController < ApplicationController
     if @smart_home_system.save
       redirect_to profile_path, notice: 'Smart home system successfully connected.'
     else
-      render :new
+
+      profile_requirements
+      render 'dashboard/profile'
     end
   end
 
@@ -14,5 +16,12 @@ class SmartHomeSystemsController < ApplicationController
 
   def smart_home_system_params
     params.require(:smart_home_system).permit(:name, :system_type, :username, :password)
+  end
+
+  def profile_requirements
+    @appliance = Appliance.new
+    @utility_account = UtilityAccount.new
+    @energy_providers = EnergyProvider.all
+    @energy_provider = EnergyProvider.new
   end
 end

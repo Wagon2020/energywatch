@@ -41,7 +41,7 @@ class EntsoeApi
         other_sum += value["quantity"].to_i
       end
     end
-    { renewable: renewable_sum, fossil: fossil_sum, other: other_sum, nuclear: nuclear_sum }
+    @categorized = { renewable: renewable_sum, fossil: fossil_sum, other: other_sum, nuclear: nuclear_sum }
   end
 
   private

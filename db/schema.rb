@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_153114) do
+ActiveRecord::Schema.define(version: 2020_06_03_134632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_06_02_153114) do
     t.string "consumption_type", null: false
     t.bigint "consumption_id", null: false
     t.index ["consumption_type", "consumption_id"], name: "idx_consumption"
+  end
+
+  create_table "energies", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "amount"
+    t.string "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "energy_providers", force: :cascade do |t|

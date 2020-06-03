@@ -5,7 +5,7 @@ class CreateUtilityAccounts < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password
       t.string :meter_ref
-      t.references :energy_provider, null: false, foreign_key: true
+      t.references :energy_provider, null:false, foreign_key: true
 
       t.timestamps
     end

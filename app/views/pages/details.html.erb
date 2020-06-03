@@ -1,1 +1,25 @@
-<h1>Inserting more details here</h1>
+<h1>Electricity mix</h1>
+
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = 'myChart';
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [29696, 19022, 316, 7656],
+        }],
+        labels: ["Fossil fuel", "Nuclear", "Renewable", "Other"],
+    },
+});
+</script>
+
+            <!-- backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 115, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderWidth: 1 -->

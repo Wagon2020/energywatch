@@ -6,8 +6,7 @@ class AppliancesController < ApplicationController
     if @appliance.save
       redirect_to profile_path, notice: 'Appliance was successfully created.'
     else
-      profile_requirements
-      render 'dashboard/profile'
+      redirect_to profile_path, notice: 'Error: No information entered.'
     end
   end
 

@@ -6,11 +6,7 @@ class UtilityAccountsController < ApplicationController
     if @utility_account.save
       redirect_to profile_path, notice: 'Utility account successfully connected.'
     else
-      # redirect_to profile_path, notice: 'Input missing.'
-
-      profile_requirements
-
-      render 'dashboard/profile'
+    redirect_to profile_path, notice: 'Error: No information entered.'
     end
   end
 

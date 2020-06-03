@@ -6,9 +6,7 @@ class SmartHomeSystemsController < ApplicationController
     if @smart_home_system.save
       redirect_to profile_path, notice: 'Smart home system successfully connected.'
     else
-
-      profile_requirements
-      render 'dashboard/profile'
+      redirect_to profile_path, notice: 'Error: No information entered.'
     end
   end
 

@@ -3,9 +3,9 @@ require 'open-uri'
 class EntsoeApi
   def initialize
     @base_url = "https://transparency.entsoe.eu/api?"
-    @token = "dfb276c1-986a-4e92-a736-74d584bb782c" # TODO: use ENV
     @doc_type = "A75"
     @process_type = "A16"
+    @token = ENV["securityToken"]
     @domain = "10Y1001A1001A83F"
     @date_start = Date.yesterday.to_s.delete('-') + '2200' # returns "202006022200"
     @date_end = Date.today.to_s.delete('-') + '2200' # returns "202006022200"

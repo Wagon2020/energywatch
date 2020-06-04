@@ -1,14 +1,24 @@
 .flexbox {
   display: flex;
   justify-content: space-between;
+  padding: 16px 16px;
+  margin: 20px 10px;
 }
 
-.menu {
-  padding: 8px 16px;
-  margin: 8px 0px;
+.icon-nav {
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    padding: 0px !important;
+    margin: 0px !important;
 }
 
-h2 {
-  margin-top: 8px;
-  margin-left: 20px;
+.nav-pills {
+  width: 100px;
+  background-color: $light-green;
+  height: 100vh;
 }
+
+

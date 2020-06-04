@@ -1,14 +1,11 @@
-  <h2>My Profile</h2>
-  <hr>
-
 <div class="menu">
 <div class="row">
   <div class="col-.5">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-appliance-tab" data-toggle="pill" href="#v-pills-appliance" role="tab" aria-controls="v-pills-appliance" aria-selected="true"><i class="fas fa-plug"></i></a>
-      <a class="nav-link" id="v-pills-smarthome-tab" data-toggle="pill" href="#v-pills-smarthome" role="tab" aria-controls="v-pills-smarthome" aria-selected="false"><i class="fas fa-laptop-house"></i></a>
-      <a class="nav-link" id="v-pills-utility-tab" data-toggle="pill" href="#v-pills-utility" role="tab" aria-controls="v-pills-utility" aria-selected="false"><i class="far fa-lightbulb"></i></a>
-      <a class="nav-link" id="v-pills-energyprovider-tab" data-toggle="pill" href="#v-pills-energyprovider" role="tab" aria-controls="v-pills-energyprovider" aria-selected="false"><i class="fas fa-bolt"></i></a>
+      <a class="nav-link icon-nav active" id="v-pills-appliance-tab" data-toggle="pill" href="#v-pills-appliance" role="tab" aria-controls="v-pills-appliance" aria-selected="true"><i class="fas fa-plug"></i></a>
+      <a class="nav-link icon-nav" id="v-pills-smarthome-tab" data-toggle="pill" href="#v-pills-smarthome" role="tab" aria-controls="v-pills-smarthome" aria-selected="false"><i class="fas fa-laptop-house"></i></a>
+      <a class="nav-link icon-nav" id="v-pills-utility-tab" data-toggle="pill" href="#v-pills-utility" role="tab" aria-controls="v-pills-utility" aria-selected="false"><i class="far fa-lightbulb"></i></a>
+      <a class="nav-link icon-nav" id="v-pills-energyprovider-tab" data-toggle="pill" href="#v-pills-energyprovider" role="tab" aria-controls="v-pills-energyprovider" aria-selected="false"><i class="fas fa-bolt"></i></a>
     </div>
   </div>
 
@@ -21,13 +18,12 @@
           <h7>Add Your Appliances</h7>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applianceModal" data-whatever="@mdo">+</button>
         </div>
-
            <hr>
-
-        <div class = "flexbox menu">
+        <div class="flexbox menu">
          <h7>Your Saved Appliances: </h7>
-          <br><% @user.appliances.each do |appliances| %>
-          <%= appliances %>
+          <br><% @user.appliances.each do |appliance| %>
+          <%= appliance.appliance_type %>
+          <%= appliance.energy_performance %>
           <% end %>
         </div>
          <hr>
@@ -39,7 +35,13 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smartHomeModal" data-whatever="@mdo">+</button>
         </div>
         <hr>
-         <h7 class = "flexbox menu">Your Saved Smart Home System </h7>
+        <div class="flexbox menu">
+         <h7>Your Saved Smart Home System: </h7>
+         <br><% @user.smart_home_systems.each do |smart_home_system| %>
+         <%= smart_home_system.name %>
+         <%= smart_home_system.system_type %>
+         <% end %>
+         </div>
          <hr>
       </div>
 
@@ -49,17 +51,20 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#utilityAccModal" data-whatever="@mdo">+</button>
         </div>
         <hr>
-         <h7 class = "flexbox menu">Your Saved Utility Account </h7>
+        <div class="flexbox menu">
+         <h7>Your Saved Utility Account: </h7>
+         <% %>
+         </div>
            <hr>
       </div>
 
     <div class="tab-pane fade" id="v-pills-energyprovider" role="tabpanel" aria-labelledby="v-pills-energyprovider-tab">
       <div class="energyprovider-wrapper flexbox menu" id="energyprovider-menu">
-        <h7>Add Your Energy Provider </h7>
+        <h7>Add Your Energy Provider: </h7>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#energyProvModal" data-whatever="@mdo">+</button>
       </div>
       <hr>
-       <h7 class = "flexbox menu">Your Saved Energy Provider </h7>
+       <h7 class="flexbox menu">Your Saved Energy Provider </h7>
       <hr>
     </div>
   </div>

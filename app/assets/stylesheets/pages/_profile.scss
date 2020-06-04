@@ -1,5 +1,24 @@
 .flexbox {
   display: flex;
   justify-content: space-between;
+  padding: 16px 16px;
+  margin: 20px 10px;
 }
+
+.icon-nav {
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.nav-pills {
+  width: 100px;
+  background-color: $light-green;
+  height: 100vh;
+}
+
 

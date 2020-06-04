@@ -1,6 +1,14 @@
+.navbar {
+  width: 100vw;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $energywatch-green;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,3 +22,13 @@
 .nav-link {
   margin: 8px 0px;
 }
+
+.home_nav {
+  background: none;
+  box-shadow: none
+}
+
+// .changeColor {
+//   background: $energywatch-green;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }

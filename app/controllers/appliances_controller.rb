@@ -10,6 +10,10 @@ class AppliancesController < ApplicationController
     end
   end
 
+  def index
+    @appliance = Appliance.all
+  end
+
   def edit
     @appliance = Appliance.find(params[:id])
   end

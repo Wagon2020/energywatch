@@ -34,6 +34,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-new Chartkick.PieChart("chart-donut", gon.donut_data, {legend: "bottom"}, {backgroundColor: ["#80B918", "#A44932", "#1fe5bd", "#E4D41B"]})
-new Chartkick.ColumnChart("chart-bar", gon.chart_data, {legend: "bottom"})
+new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#80B918", "#AA4465", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
+new Chartkick.BarChart("chart-bar", gon.chart_data, {colors: ["#1fe5bd"]})
 });
+
+

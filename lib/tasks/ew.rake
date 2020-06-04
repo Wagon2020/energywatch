@@ -3,5 +3,4 @@ namespace :ew do
   task entsoe_call: :environment do
     EntsoeApi.new.receive
   end
-
 end

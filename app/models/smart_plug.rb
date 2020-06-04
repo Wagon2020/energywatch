@@ -1,0 +1,2 @@
+class SmartPlug < ApplicationRecord
+end

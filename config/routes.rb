@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :smart_home_systems, only: [:create]
   resources :utility_accounts, only: [:create]
   resources :energy_providers, only: [:create]
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :smart_plugs, only: [ :create, :update ]
+    end
+  end
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

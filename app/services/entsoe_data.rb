@@ -20,6 +20,10 @@ class EntsoeData
     { renewable: renewable_sum, fossil: fossil_sum, other: other_sum, nuclear: nuclear_sum }
   end
 
+  def self.donut_array
+    donut.map { |fueltype, quantity| [fueltype, quantity] }
+  end
+
   def self.energy_types
     data = EnergyMix.last
     { biomass: data.biomass,
@@ -38,6 +42,10 @@ class EntsoeData
       wind_offshore: data.wind_offshore,
       wind_onshore: data.wind_onshore,
       other: data.other }
+  end
+
+  def self.energy_types_array
+    energy_types.map { |fueltype, quantity| [fueltype, quantity] }
   end
 
   private

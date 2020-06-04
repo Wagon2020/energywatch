@@ -4,16 +4,8 @@ class PagesController < ApplicationController
   def home
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
-    @donut_array = []
-    @donut.each do |fueltype, quantity|
-      @donut_array << [fueltype, quantity]
-    end
-    gon.donut_data = @donut_array
-    @chart_array = []
-    @data.each do |fueltype, quantity|
-      @chart_array << [fueltype, quantity]
-    end
-    gon.chart_data = @chart_array
+    gon.donut_data = EntsoeData.donut_array
+    gon.chart_data = EntsoeData.energy_types_array
   end
 
   def details
@@ -22,16 +14,7 @@ class PagesController < ApplicationController
   def data
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
-    @donut_array = []
-    @donut.each do |fueltype, quantity|
-      @donut_array << [fueltype, quantity]
-    end
-    gon.donut_data = @donut_array
-    @chart_array = []
-    @data.each do |fueltype, quantity|
-      @chart_array << [fueltype, quantity]
-    end
-    gon.chart_data = @chart_array
+    gon.donut_data = EntsoeData.donut_array
+    gon.chart_data = EntsoeData.energy_types_array
   end
-
 end

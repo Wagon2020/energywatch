@@ -1,21 +1,20 @@
 class Api::V1::SmartPlugsController < Api::V1::BaseController
+  acts_as_token_authentication_handler_for User, except: [ :index, :show ]
   def create
-    # render json: { test: "test" },
-    #   status: :unprocessable_entity
-    # @plug = SmartPlug.new(plug_params)
-    # @plug.user = current_user
-    # authorize @plug
-    # if @plug.save
-    #   render :show, status: :created
-    # else
-    #   render_error
-    # end
+    @plug = SmartPlug.new(plug_params)
+    @plug.user = current_user
+    authorize @plug
+    if @plug.save
+      render :show, status: :created
+    else
+      render_error
+    end
   end
 
   private
 
   def plug_params
-    params.require(:plug).permit(:name, :address)
+    params.require(:plug).permit(:actual, :daily)
   end
 
   def render_error

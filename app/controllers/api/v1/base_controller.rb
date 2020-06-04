@@ -25,7 +25,7 @@ class Api::V1::BaseController < ActionController::API
     if Rails.env.development?
       response = { type: exception.class.to_s, message: exception.message, backtrace: exception.backtrace }
     else
-      response = { error: "Internal Server Error" }
+      response = { error: "Internal Server Error from ew" }
     end
     render json: response, status: :internal_server_error
   end

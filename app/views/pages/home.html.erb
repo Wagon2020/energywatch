@@ -1,9 +1,16 @@
-<%= include_gon %>
 
-<h1>Energymix</h1>
-<p>here you can see a rough overview of the current energy mix, for mor detail pls. visit to our <%= link_to "data section", data_path %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/banner.jpg);">
+    <p>Because climat matters <br>let's save our planet together 🌍 💗</p>
+    <%= link_to "Sign up, be a hero!", new_user_session_path, class: "btn-gradient"  %>
+</div>
+
+
+<h1>Overview</h1>
+<p class="full_opacity">here you can see a rough overview of the current energy mix, for mor detail pls. visit to our <%= link_to "data section", data_path %></p>
 
 <hr>
 
 <div id="chart-donut" style="height: 300px;"></div>
 <hr>
+
+<%= include_gon %>

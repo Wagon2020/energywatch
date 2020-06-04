@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= include_gon %>
+
+<h1>Energymix</h1>
+<p>here you can see a rough overview of the current energy mix, for mor detail pls. visit to our <%= link_to "data section", data_path %></p>
+
+<hr>
+
+<div id="chart-donut" style="height: 300px;"></div>
+<hr>

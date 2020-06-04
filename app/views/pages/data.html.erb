@@ -1,3 +1,4 @@
+<%= include_gon %>
 <h1>Pages#data</h1>
 <p>DATA TESTS</p>
 <%= link_to data_path do  %>
@@ -6,8 +7,10 @@
 <% end %>
 <hr>
 <%= @data %>
+<div id="chart-bar" style="height: 300px;"></div>
 <hr>
 <%= @donut %>
+<div id="chart-donut" style="height: 300px;"></div>
 <hr>
 <table>
   <tr>Time: <%= "TODO: timestamp" %></tr>

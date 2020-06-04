@@ -8,6 +8,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+require("chartkick")
+require("chart.js")
+
+new Chartkick.PieChart("chart-donut", gon.donut_data)
+new Chartkick.ColumnChart("chart-bar", gon.chart_data)
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

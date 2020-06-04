@@ -1,3 +1,10 @@
+.navbar {
+  width: 100vw;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $energywatch-green;
@@ -14,4 +21,12 @@
 
 .nav-link {
   margin: 8px 0px;
+}
+
+.home_nav {
+  background: none;
+}
+
+.changeColor {
+   background: $energywatch-green;
 }

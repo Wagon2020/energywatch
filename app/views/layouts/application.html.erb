@@ -12,15 +12,19 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if current_page?(root_path) %>
+      <%= render 'shared/navbar', style_class: "home_nav"  %>
+    <% else %>
+      <%= render 'shared/navbar', style_class: "" %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <div class="page-content">
 
     <%= yield %>
 
     </div>
-    <footer>
-      <%= render 'shared/footer' %>
-    </footer>
+    <div class="footer">
+        <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

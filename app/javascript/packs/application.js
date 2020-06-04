@@ -27,6 +27,7 @@ require("chart.js")
 
 // External imports
 import "bootstrap";
+import { scroller } from './scroll_event';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -34,8 +35,13 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#80B918", "#AA4465", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
-new Chartkick.BarChart("chart-bar", gon.chart_data, {colors: ["#1fe5bd"]})
+  scroller();
+  let donut = document.querySelector('#chart-donut');
+  if (donut) {
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#80B918", "#AA4465", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
+  };
+  let bar = document.querySelector('#chart-bar');
+  if (bar){
+    new Chartkick.BarChart("chart-bar", gon.chart_data, {colors: ["#1fe5bd"]})
+  }
 });
-
-

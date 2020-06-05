@@ -19,14 +19,19 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applianceModal" data-whatever="@mdo">+</button>
         </div>
            <hr>
+          <% unless @user.appliances.nil? %>
         <div class="flexbox menu">
-         <h7>Your Saved Appliances: </h7>
-          <br><% @user.appliances.each do |appliance| %>
-          <%= appliance.appliance_type %>
-          <%= appliance.energy_performance %>
+         <h7>Your Appliances: </h7>
+          <% @user.appliances.each do |appliance| %>
+          <br>
+          <ul>
+          <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
+          <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
+          </ul>
           <% end %>
-        </div>
          <hr>
+        </div>
+        <% end %>
       </div>
 
       <div class="tab-pane fade" id="v-pills-smarthome" role="tabpanel" aria-labelledby="v-pills-smarthome-tab">
@@ -35,14 +40,20 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smartHomeModal" data-whatever="@mdo">+</button>
         </div>
         <hr>
+        <% unless @user.smart_home_systems.nil? %>
+
         <div class="flexbox menu">
-         <h7>Your Saved Smart Home System: </h7>
-         <br><% @user.smart_home_systems.each do |smart_home_system| %>
-         <%= smart_home_system.name %>
-         <%= smart_home_system.system_type %>
+         <h7>Connected smart home systems: </h7>
+         <% @user.smart_home_systems.each do |smart_home_system| %>
+         <br>
+         <ul>
+         <li>System Name: <%= smart_home_system.name %></li>
+         <li>System Type:<%= smart_home_system.system_type %></li>
+         </ul>
          <% end %>
-         </div>
          <hr>
+         </div>
+         <% end %>
       </div>
 
       <div class="tab-pane fade" id="v-pills-utility" role="tabpanel" aria-labelledby="v-pills-utility-tab">
@@ -51,11 +62,17 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#utilityAccModal" data-whatever="@mdo">+</button>
         </div>
         <hr>
+         <% unless @user.utility_account.nil? %>
         <div class="flexbox menu">
-         <h7>Your Saved Utility Account: </h7>
-         <% %>
-         </div>
+         <h7>Connected utility account: </h7>
+         <br>
+           <ul>
+           <li>Energy Provider: <%= @user.utility_account.energy_provider.name%></li>
+           <li>Meter Number: <%= @user.utility_account.meter_ref %></li>
+           </ul>
            <hr>
+         </div>
+         <% end %>
       </div>
 
     <div class="tab-pane fade" id="v-pills-energyprovider" role="tabpanel" aria-labelledby="v-pills-energyprovider-tab">
@@ -64,8 +81,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#energyProvModal" data-whatever="@mdo">+</button>
       </div>
       <hr>
-       <h7 class="flexbox menu">Your Saved Energy Provider </h7>
-      <hr>
+
     </div>
   </div>
    <%= render 'modal' %>

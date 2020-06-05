@@ -1,6 +1,7 @@
 
 <div class="banner">
-    <p>Because climate matters <br>let's save our planet together 🌍 💗</p>
+    <h2>When it comes to energy, timing is everything.</h2>
+    <h4>Smart energy starts with you! 🌍 💗</h4><br>
     <%= link_to "Sign up, be a hero!", new_user_session_path, class: "btn-gradient"  %>
 </div>
 
@@ -21,7 +22,7 @@
 
       <p>To find out more, click <%= link_to "here.", details_path %></p>
 
-      <button class="btn btn-action"><%= link_to "Sign up", profile_path %></button>
+      <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
     </div>
 
     <div class="donut-frame">
@@ -32,12 +33,9 @@
       </div>
     </div>
 
-
-
   </div>
 
 </div>
 
-<div id="chart-donut" style="height: 300px;"></div>
 
 <%= include_gon %>

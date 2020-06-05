@@ -4,6 +4,7 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
 
   def create
     @smart_plug = SmartPlug.new(smart_plug_params)
+    @smart_plug.daily_array = build_daily_array(params["smart_plug"])
     @smart_plug.user = current_user
     authorize @smart_plug
     if @smart_plug.save!
@@ -22,10 +23,24 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   end
 
   def smart_plug_params
-    params.require(:smart_plug).permit(:actual, :daily)
+    params.require(:smart_plug).permit(:actual, :daily, :daily_array)
   end
 
   def render_error
     render json: { errors: @plug.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def receive_db_array
+    JSON(SmartPlug.last.daily_array)
+  end
+
+  def build_daily_array(payload)
+    daily_array = receive_db_array
+    if daily_array.empty?
+      daily_array << Date.today.to_s.delete('-')
+    end
+    new_entry = [Time.now.strftime("%k:%M"), payload["actual"]]
+    daily_array << new_entry
+    JSON(daily_array)
   end
 end

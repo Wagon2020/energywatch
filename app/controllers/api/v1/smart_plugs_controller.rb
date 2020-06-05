@@ -2,7 +2,8 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
   before_action :set_smart_plug, only: [ :show ]
 
-  def create
+  def entry
+    binding.pry
     @smart_plug = SmartPlug.new(smart_plug_params)
     @smart_plug.daily_array = build_daily_array(params["smart_plug"])
     @smart_plug.user = current_user
@@ -13,10 +14,6 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
     else
       render_error
     end
-  end
-
-  def index
-    @smart_plug = SmartPlug.last
   end
 
   private

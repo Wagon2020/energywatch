@@ -21,11 +21,11 @@
            <hr>
           <% unless @user.appliances.nil? %>
         <div class="flexbox menu">
-         <h7>Your Saved Appliances: </h7>
+         <h7>Your Appliances: </h7>
           <% @user.appliances.each do |appliance| %>
           <br>
           <ul>
-          <li>Appliance: <%= appliance.appliance_type %></li>
+          <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
           <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
           </ul>
           <% end %>
@@ -43,12 +43,12 @@
         <% unless @user.smart_home_systems.nil? %>
 
         <div class="flexbox menu">
-         <h7>Your Saved Smart Home System: </h7>
+         <h7>Connected smart home systems: </h7>
          <% @user.smart_home_systems.each do |smart_home_system| %>
          <br>
          <ul>
-         <li>Smart Home System Name: <%= smart_home_system.name %></li>
-         <li>Smart Home System Type:<%= smart_home_system.system_type %></li>
+         <li>System Name: <%= smart_home_system.name %></li>
+         <li>System Type:<%= smart_home_system.system_type %></li>
          </ul>
          <% end %>
          <hr>
@@ -64,10 +64,10 @@
         <hr>
          <% unless @user.utility_account.nil? %>
         <div class="flexbox menu">
-         <h7>Your Saved Utility Account: </h7>
+         <h7>Connected utility account: </h7>
          <br>
            <ul>
-           <li>Energy Provider Name: <%= @user.utility_account.energy_provider.name%></li>
+           <li>Energy Provider: <%= @user.utility_account.energy_provider.name%></li>
            <li>Meter Number: <%= @user.utility_account.meter_ref %></li>
            </ul>
            <hr>

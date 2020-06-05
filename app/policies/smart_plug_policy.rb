@@ -4,4 +4,8 @@ class SmartPlugPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    user == User.find(1)
+  end
 end

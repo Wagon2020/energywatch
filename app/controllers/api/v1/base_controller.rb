@@ -13,7 +13,7 @@ class Api::V1::BaseController < ActionController::API
 
   def user_not_authorized(exception)
     render json: {
-      error: "Unauthorized #{exception.policy.class.to_s.underscore.camelize}.#{exception.query}"
+      error: "Unauthorized EW #{exception.policy.class.to_s.underscore.camelize}.#{exception.query}"
     }, status: :unauthorized
   end
 

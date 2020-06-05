@@ -3,8 +3,8 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   before_action :set_smart_plug, only: [ :show ]
 
   def create
-    build_daily_array(params["smart_plug"])
     @smart_plug = SmartPlug.new(smart_plug_params)
+    @smart_plug.daily_array = build_daily_array(params["smart_plug"])
     @smart_plug.user = current_user
     authorize @smart_plug
     if @smart_plug.save!
@@ -23,7 +23,7 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   end
 
   def smart_plug_params
-    params.require(:smart_plug).permit(:actual, :daily)
+    params.require(:smart_plug).permit(:actual, :daily, :daily_array)
   end
 
   def render_error
@@ -31,7 +31,7 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   end
 
   def receive_db_array
-    []
+    JSON(SmartPlug.last.daily_array)
   end
 
   def build_daily_array(payload)
@@ -39,8 +39,8 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
     if daily_array.empty?
       daily_array << Date.today.to_s.delete('-')
     end
-    daily_array << payload["actual"]
+    new_entry = [Time.now.strftime("%k:%M"), payload["actual"]]
+    daily_array << new_entry
     JSON(daily_array)
-    binding.pry
   end
 end

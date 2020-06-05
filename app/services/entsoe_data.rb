@@ -48,6 +48,10 @@ class EntsoeData
     energy_types.map { |fueltype, quantity| [fueltype, quantity] }
   end
 
+  def self.load
+    energy_types_array.sum
+  end
+
   private
 
   def self.renewable

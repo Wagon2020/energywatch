@@ -2,13 +2,20 @@
 <h1>Pages#data</h1>
 <p>DATA TESTS</p>
 <%= @load %>
-<hr>
+
 <%= @data %>
 <div id="chart-bar" style="height: 300px;"></div>
 <hr>
 <%= @donut %>
 <div id="chart-donut" style="height: 300px;"></div>
 <hr>
+
+<hr>
+
+<div id="chart-line" style="height: 300px; width: 800px;"></div>
+
+
+
 <table>
   <tr>Time: <%= "TODO: timestamp" %></tr>
   <% @data.each do |type, amount|%>

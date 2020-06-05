@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_205418) do
+ActiveRecord::Schema.define(version: 2020_06_05_113458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 2020_06_04_205418) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "generations", force: :cascade do |t|
+    t.string "fuel_type"
+    t.integer "generation_capacity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "smart_home_systems", force: :cascade do |t|
     t.string "name"
     t.string "system_type"
@@ -81,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_205418) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "daily_array"
     t.index ["user_id"], name: "index_smart_plugs_on_user_id"
   end
 

@@ -53,7 +53,15 @@
         <hr>
         <div class="flexbox menu">
          <h7>Your Saved Utility Account: </h7>
-         <% %>
+         <% @user.utility_accounts do |utility_account|%>
+         <% if utility_account.energy_provider_id != :null %>
+         <% @user.energy_providers do |energy_provider| %>
+         <%= energy_provider.name %>
+         <%= energy_provider.url %>
+         <%= utility_account.meter_ref %>
+         <% end %>
+         <% end %>
+         <% end %>
          </div>
            <hr>
       </div>

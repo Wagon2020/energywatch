@@ -15,6 +15,10 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
     end
   end
 
+  def index
+    @smart_plug = SmartPlug.last
+  end
+
   private
 
   def set_smart_plug

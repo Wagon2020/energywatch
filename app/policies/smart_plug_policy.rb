@@ -8,4 +8,8 @@ class SmartPlugPolicy < ApplicationPolicy
   def create?
     user == User.find(1)
   end
+
+  def show?
+    true
+  end
 end

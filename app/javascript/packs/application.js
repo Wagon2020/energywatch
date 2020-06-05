@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   scroller();
   let donut = document.querySelector('#chart-donut');
   if (donut) {
-    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#80B918", "#AA4465", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#1fe5bd", "#FB1E7F", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
   };
   let bar = document.querySelector('#chart-bar');
   if (bar){

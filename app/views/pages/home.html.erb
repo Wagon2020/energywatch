@@ -4,29 +4,36 @@
     <%= link_to "Sign up, be a hero!", new_user_session_path, class: "btn-gradient"  %>
 </div>
 
+<div class="title-banner">
+  <h1>Ever wondered where your electricity comes from?</h1>
+</div>
 
-<h1>Overview</h1>
-<p class="full_opacity">here you can see a rough overview of the current energy mix, for mor detail pls. visit to our <%= link_to "data section", data_path %></p>
+<div class="home-container">
 
-<div class="container">
-
-  <div class="title-banner">
-    <h1>Ever wondered where your electricity comes from?</h1>
-    <p>To find out more, click <%= link_to "here.", details_path %></p>
-  </div>
-
-  <div class="cards extra-top-margin">
+  <div class="cards">
     <div class="card home">
-      <p>Corsair Sail ho bilged on her anchor transom matey mutiny belaying pin measured fer yer chains. Bring a spring upon her cable mizzen come about yawl crimp gangplank brig lugger.</p>
+      <h4>Why it matters</h4>
+      <p>The energy sector is the largest source of greenhouse gas emissions worldwide. This is due to the burning of fossil fuels for the production of electricity.</p>
+
+      <p>By shifting electricity demand towards times when there is more renewable energy in the grid, YOU can actively help reduce the emissions from the energy sector.</p>
+
+      <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
+
+      <p>To find out more, click <%= link_to "here.", details_path %></p>
 
       <button class="btn btn-action"><%= link_to "Sign up", profile_path %></button>
     </div>
 
-
-    <div class="donut">
-      <h3>Energymix</h3>
-      <div id="chart-donut" style="height: 350px;"></div>
+    <div class="donut-frame">
+      <div class="background-card"></div>
+      <div class="donut">
+        <h3>Energy mix</h3>
+        <div id="chart-donut" style="height: 400px;"></div>
+      </div>
     </div>
+
+
+
   </div>
 
 </div>

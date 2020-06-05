@@ -10,5 +10,6 @@ class DashboardController < ApplicationController
 
   def overview
     @user = current_user
+    gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
   end
 end

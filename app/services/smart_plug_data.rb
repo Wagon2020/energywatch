@@ -28,4 +28,21 @@ class SmartPlugData
       'june 04' => 1299
     }
   end
+
+  def self.yesterday
+    data_hash(Date.today.to_s.delete('-').to_i - 1)
+  end
+
+  def self.today
+    data_hash(Date.today.to_s.delete('-').to_i)
+  end
+
+  private
+
+  def self.data_hash(date)
+    result = SmartPlug.where(todays_date: date)[0].daily_hash
+    JSON(result)
+  end
+
+
 end

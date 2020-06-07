@@ -2,8 +2,13 @@
 <h1>Pages#data</h1>
 <p>DATA TESTS</p>
 <%= @load %>
-
+<hr>
+<p>Smart-today: <%= @smart_today %></p>
+<p>Smart-yesterday: <%= @smart_yesterday %></p>
+<hr>
+<p>last API call: <%= @data_created_at %></p>
 <%= @data %>
+<hr>
 <div id="chart-bar" style="height: 300px;"></div>
 <hr>
 <%= @donut %>

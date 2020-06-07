@@ -19,6 +19,9 @@ class PagesController < ApplicationController
   end
 
   def data
+    @smart_today = SmartPlugData.today
+    @smart_yesterday = SmartPlugData.yesterday
+    @data_created_at = EntsoeData.created_at
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
     gon.donut_data = EntsoeData.donut_array

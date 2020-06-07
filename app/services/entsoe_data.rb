@@ -44,6 +44,10 @@ class EntsoeData
       other: data.other }
   end
 
+  def self.created_at
+    EnergyMix.last.created_at
+  end
+
   def self.energy_types_array
     energy_types.map { |fueltype, quantity| [fueltype, quantity] }
   end

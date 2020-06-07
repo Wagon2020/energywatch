@@ -2,6 +2,10 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
   before_action :set_smart_plug, only: [ :show ]
 
+  def initialize
+    @time_shift = 2.hour
+  end
+
   def entry
     if params["smart_plug"]["todays_date"] == SmartPlug.last.todays_date
       update(params)
@@ -45,7 +49,7 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
 
   def build_daily_hash(db_hash, actual)
     db_hash ? daily_hash = JSON(db_hash) : daily_hash = {}
-    daily_hash[Time.now.strftime("%k:%M")] = actual
+    daily_hash[(Time.now + @time_shift).strftime("%k:%M")] = actual
     JSON(daily_hash)
   end
 end

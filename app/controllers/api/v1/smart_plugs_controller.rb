@@ -3,45 +3,49 @@ class Api::V1::SmartPlugsController < Api::V1::BaseController
   before_action :set_smart_plug, only: [ :show ]
 
   def entry
-    binding.pry
-    @smart_plug = SmartPlug.new(smart_plug_params)
-    @smart_plug.daily_array = build_daily_array(params["smart_plug"])
-    @smart_plug.user = current_user
-    authorize @smart_plug
-    if @smart_plug.save!
-      render json: { "Stefan says, you created: " => @smart_plug }, status: :created
-      # render :show, status: :created
+    if params["smart_plug"]["todays_date"] == SmartPlug.last.todays_date
+      update(params)
     else
-      render_error
+      create(params["smart_plug"]["actual"])
     end
   end
 
   private
 
-  def set_smart_plug
-    @smart_plug = SmartPlug.find(params[:id])
-    authorize @smart_plug # For Pundit
+  def create(actual)
+    @smart_plug = SmartPlug.new(smart_plug_params)
+    @smart_plug.daily_hash = build_daily_hash(@smart_plug.daily_hash, actual)
+    @smart_plug.user = current_user
+    authorize @smart_plug
+    if @smart_plug.save!
+      render json: { "Stefan says, you created: " => @smart_plug }, status: :created
+    else
+      render_error
+    end
+  end
+
+  def update(params)
+    @smart_plug = SmartPlug.last
+    @smart_plug.daily_hash = build_daily_hash(@smart_plug.daily_hash, params["smart_plug"]["actual"])
+    authorize @smart_plug
+    if @smart_plug.save!
+      render json: { "Stefan says, you updated: " => @smart_plug }, status: :created
+    else
+      render_error
+    end
   end
 
   def smart_plug_params
-    params.require(:smart_plug).permit(:actual, :daily, :daily_array)
+    params.require(:smart_plug).permit(:actual, :todays_date, :daily_hash, :yesterday)
   end
 
   def render_error
     render json: { errors: @plug.errors.full_messages }, status: :unprocessable_entity
   end
 
-  def receive_db_array
-    JSON(SmartPlug.last.daily_array)
-  end
-
-  def build_daily_array(payload)
-    daily_array = receive_db_array
-    if daily_array.empty?
-      daily_array << Date.today.to_s.delete('-')
-    end
-    new_entry = [Time.now.strftime("%k:%M"), payload["actual"]]
-    daily_array << new_entry
-    JSON(daily_array)
+  def build_daily_hash(db_hash, actual)
+    db_hash ? daily_hash = JSON(db_hash) : daily_hash = {}
+    daily_hash[Time.now.strftime("%k:%M")] = actual
+    JSON(daily_hash)
   end
 end

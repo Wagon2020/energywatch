@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :smart_plugs, only: [ :create ]
+      # resources :smart_plugs, only: [ :index ]
+      post 'entry', to: 'smart_plugs#entry'
     end
   end
 end

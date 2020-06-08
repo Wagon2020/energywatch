@@ -54,6 +54,12 @@ document.addEventListener('turbolinks:load', () => {
     new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
   }
 
+  // chart for renewable forecast
+  let re_forecast = document.querySelector('#chart-re-forecast');
+  if (re_forecast){
+    // gon.test_data to be replaced with forecast data
+    new Chartkick.LineChart("chart-re-forecast", gon.renewable_forecast, {colors: ["#1fe5bd"], legend: "bottom"})
+  }
   // chart set up for forecast data
   let forecast = document.querySelector('#chart-forecast');
   if (forecast){

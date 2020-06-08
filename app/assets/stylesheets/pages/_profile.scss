@@ -18,10 +18,25 @@
 .nav-pills {
   width: 100px;
   background-color: $light-green;
-  height: 100vh;
+  height: 150vh;
 }
 
 
 li {
   list-style-type: none;
 }
+
+.profile-card {
+  border: 1px solid $energywatch-green;
+  background-color: $light-green;
+  padding: 8px 8px;
+  margin: 10px 10px;
+  width: 30%;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+.profile-card-info {
+  margin-top: 12px;
+}
+

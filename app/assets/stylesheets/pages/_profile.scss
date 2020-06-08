@@ -30,16 +30,13 @@ li {
   border: 1px solid $energywatch-green;
   background-color: $light-green;
   padding: 8px 8px;
-  margin: 8px 8px;
+  margin: 10px 10px;
   width: 30%;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
   display: inline-block;
 }
 
-.fa-pencil-alt,
-.fa-trash-alt {
-  justify-content: flex-end;
-  padding: 4px;
-  margin: 4px;
+.profile-card-info {
+  margin-top: 12px;
 }
 

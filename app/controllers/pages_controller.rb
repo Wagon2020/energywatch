@@ -17,6 +17,9 @@ class PagesController < ApplicationController
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
+
+    # gon.test_data below to be replaced with forecast data Hash
+    gon.test_data = PagesController.test_data
   end
 
   def data
@@ -39,4 +42,13 @@ class PagesController < ApplicationController
   # redirect_to root_path
   end
 
+  private
+
+  # delete method once forecast data is in place
+  def self.test_data
+    [
+      { name: "Workout", data: { "2017-01-01": 3, "2017-01-02": 4 } },
+      { name: "Call parents", data: { "2017-01-01": 5, "2017-01-02": 3 } }
+    ]
+  end
 end

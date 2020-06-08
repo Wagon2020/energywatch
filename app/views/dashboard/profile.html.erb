@@ -61,8 +61,7 @@
                       <%= link_to smart_home_system_path(smart_home_system), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i>
                       <% end %>
                        <ul>
-                       <li>System Name: <%= smart_home_system.name %></li>
-                       <li>System Type:<%= smart_home_system.system_type %></li>
+                       <li><%= smart_home_system.system_type %></li>
                        </ul>
                     </div>
                   </div>

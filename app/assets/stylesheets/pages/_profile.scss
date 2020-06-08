@@ -25,3 +25,12 @@
 li {
   list-style-type: none;
 }
+
+.profile-card {
+  border: 1px solid $energywatch-green;
+  background-color: $light-green;
+  padding: 8px 8px;
+  margin: 8px 8px;
+  width: 30%;
+  display:flex;
+}

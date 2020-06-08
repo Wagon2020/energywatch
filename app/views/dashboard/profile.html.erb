@@ -22,16 +22,22 @@
           <% unless @user.appliances.nil? %>
         <div class="flexbox menu">
          <h7>Your Appliances: </h7>
-          <% @user.appliances.each do |appliance| %>
-          <br>
-          <ul>
-          <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
-          <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
-          </ul>
-          <% end %>
+        <br>
+        <div class="container">
+              <% @user.appliances.each do |appliance| %>
+         <div class="profile-card">
+            <div class="profile-card-info">
+              <ul>
+                <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
+                <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
+              </ul>
+            </div>
+          </div>
+              <% end %>
          <hr>
         </div>
         <% end %>
+        </div>
       </div>
 
       <div class="tab-pane fade" id="v-pills-smarthome" role="tabpanel" aria-labelledby="v-pills-smarthome-tab">
@@ -66,10 +72,14 @@
         <div class="flexbox menu">
          <h7>Connected utility account: </h7>
          <br>
+         <div class="profile-card">
+          <div class="profile-card-infos">
            <ul>
            <li>Energy Provider: <%= @user.utility_account.energy_provider.name%></li>
            <li>Meter Number: <%= @user.utility_account.meter_ref %></li>
            </ul>
+          </div>
+         </div>
            <hr>
          </div>
          <% end %>

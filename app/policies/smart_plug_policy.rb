@@ -5,7 +5,11 @@ class SmartPlugPolicy < ApplicationPolicy
     end
   end
 
-  def create?
+  def entry?
     user == User.find(1)
+  end
+
+  def show?
+    true
   end
 end

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
     @re = EntsoeData.renewable_share
+    @recommendations = EntsoeData.recommendations
   end
 
   def details

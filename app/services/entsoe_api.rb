@@ -65,7 +65,6 @@ class EntsoeApi
                                 wind_offshore: JSON(data["B18"]),
                                 wind_onshore: JSON(data["B19"]),
                                 total_renewable: JSON(data["total"]))
-    binding.pry
     new_forecast.save!
   end
 

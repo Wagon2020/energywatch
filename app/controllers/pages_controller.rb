@@ -29,18 +29,19 @@ class PagesController < ApplicationController
     @data_created_at = EntsoeData.created_at
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
+    @renewable_forecast = EntsoeData.forecast_renewable # returns Hash of the latest renewable forecast (summed up)
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
   end
 
   def download_pdf
-  send_file(
+    send_file(
     "#{Rails.root}/app/assets/images/fluter70_klima_poster.pdf",
     filename: "fluter70_klima_poster.pdf",
     type: "application/pdf"
-  )
-  # redirect_to root_path
+    )
+    # redirect_to root_path
   end
 
   private

@@ -11,11 +11,11 @@
   <div class="col-10">
     <div class="tab-content" id="v-pills-tabContent">
 
-          <div class="tab-pane fade show active" id="v-pills-appliance" role="tabpanel" aria-labelledby="v-pills-appliance-tab">
-            <div class="appliance-wrapper flexbox menu" id="appliance-menu">
+        <div class="tab-pane fade show active" id="v-pills-appliance" role="tabpanel" aria-labelledby="v-pills-appliance-tab">
+          <div class="appliance-wrapper flexbox menu" id="appliance-menu">
               <h7>Add Your Appliances</h7>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applianceModal" data-whatever="@mdo">+</button>
-            </div>
+          </div>
                <hr>
               <% if current_user.appliances.any? %>
             <div class="flexbox menu">
@@ -25,8 +25,8 @@
                   <% current_user.appliances.each do |appliance| %>
                 <div class="profile-card">
                   <div class="profile-card-info">
-                    <%= link_to edit_appliance_path(appliance) do %><i class="fas fa-pencil-alt"></i>
-                    <% end %>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editapplianceModal" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>
+                    <%= render 'edit_appliance_modal', appliance: appliance %>
                     <%= link_to appliance_path(appliance), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i>
                     <% end %>
                     <ul>
@@ -40,7 +40,7 @@
                 <hr>
               <% end %>
             </div>
-          </div>
+        </div>
 
           <div class="tab-pane fade" id="v-pills-smarthome" role="tabpanel" aria-labelledby="v-pills-smarthome-tab">
             <div class="smarthome-wrapper flexbox menu" id="smarthome-menu">
@@ -56,8 +56,8 @@
                 <% current_user.smart_home_systems.each do |smart_home_system| %>
                   <div class="profile-card">
                     <div class="profile-card-info">
-                      <%= link_to edit_smart_home_system_path(smart_home_system) do %><i class="fas fa-pencil-alt"></i>
-                      <% end %>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editsmartHomeModal" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>
+                      <%= render 'edit_smart_home_modal', smart_home_system: smart_home_system %>
                       <%= link_to smart_home_system_path(smart_home_system), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i>
                       <% end %>
                        <ul>
@@ -85,8 +85,8 @@
                 <div class="container">
                   <div class="profile-card">
                     <div class="profile-card-info">
-                      <%= link_to edit_utility_account_path(current_user.utility_account) do %><i class="fas fa-pencil-alt"></i>
-                      <% end %>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editutilityAccModal" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>
+                      <%= render 'edit_utility_account_modal', utility_account: current_user.utility_account %>
                       <%= link_to utility_account_path(current_user.utility_account), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i>
                       <% end %>
                      <ul>
@@ -108,8 +108,9 @@
           </div>
           <hr>
         </div>
-        <%= render 'modal' %>
-      </div>
+
+        <%= render 'modal'%>
     </div>
+  </div>
 </div>
 

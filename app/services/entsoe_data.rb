@@ -28,6 +28,16 @@ class EntsoeData
     ((donut[:renewable].to_f / donut.values.sum) * 100).round
   end
 
+  def self.recommendations
+    if renewable_share > 40
+      "The electricity mix is about as green as it gets! Now is the best time to use all that renewable power."
+    elsif renewable_share > 20
+      "It's not so bad, but you can be even greener!"
+    else
+      "Yuck, we've got a lot of coal in the mix now, better think twice!"
+    end
+  end
+
   def self.energy_types
     data = EnergyMix.last
     { biomass: data.biomass,

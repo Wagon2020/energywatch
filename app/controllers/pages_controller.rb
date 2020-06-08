@@ -21,6 +21,7 @@ class PagesController < ApplicationController
 
     # gon.test_data below to be replaced with forecast data Hash
     gon.test_data = PagesController.test_data
+    gon.renewable_forecast = EntsoeData.forecast_re_int
   end
 
   def data

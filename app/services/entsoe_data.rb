@@ -70,6 +70,13 @@ class EntsoeData
     JSON(Forecast.last.total_renewable)
   end
 
+  # method below turns array of hashes into a hash and turns all values into integers.
+
+  def self.forecast_re_int
+    EntsoeData.forecast_renewable.reduce({}) {|m,e|
+      e.each{|k,v| m[k] = v.to_i}; m}
+  end
+
   private
 
   def self.renewable

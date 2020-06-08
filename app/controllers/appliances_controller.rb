@@ -35,7 +35,7 @@ class AppliancesController < ApplicationController
   private
 
   def appliance_params
-    params.require(:appliance).permit(:appliance_type, :energy_performance)
+    params.require(:appliance).permit(:appliance_type, :energy_performance, :energy_consumption)
   end
 
   def profile_requirements

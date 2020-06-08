@@ -22,7 +22,6 @@
 
       <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
 
-      <p>To find out more, click <%= link_to "here.", details_path %></p>
 
       <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
     </div>
@@ -39,5 +38,10 @@
   </div>
 
 </div>
+
+<div class="recommendation">
+    <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click <%= link_to "here.", details_path %></p>
+</div>
+
 <%= link_to 'Download PDF', home_download_pdf_path %>
 <%= include_gon %>

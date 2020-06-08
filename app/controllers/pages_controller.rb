@@ -29,4 +29,14 @@ class PagesController < ApplicationController
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
   end
+
+  def download_pdf
+  send_file(
+    "#{Rails.root}/app/assets/images/fluter70_klima_poster.pdf",
+    filename: "fluter70_klima_poster.pdf",
+    type: "application/pdf"
+  )
+  # redirect_to root_path
+  end
+
 end

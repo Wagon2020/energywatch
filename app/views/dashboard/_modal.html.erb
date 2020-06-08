@@ -12,12 +12,13 @@
 
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-
             <%= f.error_notification %>
 
             <%= f.input :appliance_type %>
 
-            <%= f.input :energy_performance %>
+            <%= f.input :energy_performance, collection: Appliance.energy_performance_array, as: :select %>
+
+            <%= f.input :energy_consumption %>
 
             <%= f.button :submit, class: "btn-primary" %>
             <% end %>
@@ -44,8 +45,6 @@
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <%= f.error_notification %>
-
-    <%= f.input :name %>
 
     <%= f.input :system_type, collection: SmartHomeSystem.type_array, as: :select %>
 
@@ -83,13 +82,11 @@
 
     <!-- NB: need an option, where IF your energy provider is not in the list, ADD a new one -->
 
+    <%= f.input :meter_ref %>
+
     <%= f.input :email %>
 
-    <%= f.input :username %>
-
     <%= f.input :password %>
-
-    <%= f.input :meter_ref %>
 
     <%= f.button :submit, class: "btn-primary" %>
     <% end %>

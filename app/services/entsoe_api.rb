@@ -39,18 +39,35 @@ class EntsoeApi
         output[entry["MktPSRType"]["psrType"]] = entry["Period"]["Point"]
       end
     end
-    total_array = energy_array[0]["Period"]["Point"]
+
+    total_array = []
     output.each do |out|
+      time_entry = Time.new(2020, 1, 1, 0)
       out[1].each_with_index do |step, index|
-        puts "step: #{step}, index: #{index}"
-        total_array[index]["quantity"] = (total_array[index]["quantity"].to_i + step["quantity"].to_i).to_s
+        if total_array[index]
+          old_value = total_array[index][time_entry.strftime("%k:%M")].to_i
+          new_value = step["quantity"].to_i
+          total_array[index][time_entry.strftime("%k:%M")] = (old_value + new_value).to_s
+        else
+          total_array << { time_entry.strftime("%k:%M") => step["quantity"].to_i }
+        end
+        time_entry += 15.minutes
       end
     end
     output["total"] = total_array
-    output
+    store_forecast(output)
   end
 
   private
+
+  def store_forecast(data)
+    new_forecast = Forecast.new(solar: JSON(data["B16"]),
+                                wind_offshore: JSON(data["B18"]),
+                                wind_onshore: JSON(data["B19"]),
+                                total_renewable: JSON(data["total"]))
+    binding.pry
+    new_forecast.save!
+  end
 
   def store_to_db
     new_mix = EnergyMix.new(biomass: @global_data["B01"]["quantity"].to_i,

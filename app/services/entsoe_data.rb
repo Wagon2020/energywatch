@@ -24,6 +24,10 @@ class EntsoeData
     donut.map { |fueltype, quantity| [fueltype, quantity] }
   end
 
+  def self.renewable_share
+    ((donut[:renewable].to_f / donut.values.sum) * 100).round
+  end
+
   def self.energy_types
     data = EnergyMix.last
     { biomass: data.biomass,

@@ -1,4 +1,8 @@
 class Appliance < ApplicationRecord
+  def self.energy_performance_array
+    ["A+++", "A++", "A+", "A", "B", "C", "D"]
+  end
+
   belongs_to :user
   belongs_to :smart_home_system, optional: true
   has_many :consumption_entries, as: :consumption

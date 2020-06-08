@@ -1,4 +1,5 @@
 <div class="row">
+
   <div class="col-.5">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link icon-nav active" id="v-pills-appliance-tab" data-toggle="pill" href="#v-pills-appliance" role="tab" aria-controls="v-pills-appliance" aria-selected="true"><i class="fas fa-plug"></i></a>
@@ -9,6 +10,7 @@
   </div>
 
   <div class="col-10">
+
     <div class="tab-content" id="v-pills-tabContent">
 
         <div class="tab-pane fade show active" id="v-pills-appliance" role="tabpanel" aria-labelledby="v-pills-appliance-tab">
@@ -16,31 +18,30 @@
               <h7>Add Your Appliances</h7>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applianceModal" data-whatever="@mdo">+</button>
           </div>
-               <hr>
-              <% if current_user.appliances.any? %>
+          <hr>
+          <% if current_user.appliances.any? %>
             <div class="flexbox menu">
               <h7>Your Appliances: </h7>
               <br>
-              <div class="container">
-                  <% current_user.appliances.each do |appliance| %>
+            <div class="container">
+                <% current_user.appliances.each do |appliance| %>
                 <div class="profile-card">
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editapplianceModal" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>
                     <%= render 'edit_appliance_modal', appliance: appliance %>
                     <%= link_to appliance_path(appliance), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i>
                     <% end %>
-                  <div class="profile-card-info">
-                    <ul>
-                      <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
-                      <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
-                    </ul>
-                  </div>
+                    <div class="profile-card-info">
+                      <ul>
+                        <li>Appliance: <%= link_to appliance.appliance_type, overview_path %></li>
+                        <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
+                      </ul>
+                    </div>
                 </div>
-                  <% end %>
-              </div>
-                <hr>
               <% end %>
             </div>
-        </div>
+            </div>
+              <% end %>
+          </div>
 
           <div class="tab-pane fade" id="v-pills-smarthome" role="tabpanel" aria-labelledby="v-pills-smarthome-tab">
             <div class="smarthome-wrapper flexbox menu" id="smarthome-menu">
@@ -49,7 +50,7 @@
             </div>
             <hr>
             <% if current_user.smart_home_systems.any? %>
-            <div class="flexbox menu">
+              <div class="flexbox menu">
               <h7>Connected smart home systems: </h7>
               <br>
                 <div class="container">
@@ -67,11 +68,9 @@
                   </div>
                   <% end %>
                 </div>
-                  <hr>
-             </div>
+              </div>
              <% end %>
           </div>
-
           <div class="tab-pane fade" id="v-pills-utility" role="tabpanel" aria-labelledby="v-pills-utility-tab">
             <div class="utility-wrapper flexbox menu" id="utility-menu">
               <h7>Connect Your Utility Account </h7>
@@ -96,21 +95,17 @@
                     </div>
                   </div>
                  </div>
-                  <hr>
               </div>
              <% end %>
           </div>
-
-        <div class="tab-pane fade" id="v-pills-energyprovider" role="tabpanel" aria-labelledby="v-pills-energyprovider-tab">
-          <div class="energyprovider-wrapper flexbox menu" id="energyprovider-menu">
-            <h7>Add Your Energy Provider: </h7>
+              <div class="tab-pane fade" id="v-pills-energyprovider" role="tabpanel" aria-labelledby="v-pills-energyprovider-tab">
+              <div class="energyprovider-wrapper flexbox menu" id="energyprovider-menu">
+              <h7>Add Your Energy Provider: </h7>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#energyProvModal" data-whatever="@mdo">+</button>
           </div>
           <hr>
         </div>
-
         <%= render 'modal'%>
     </div>
   </div>
 </div>
-

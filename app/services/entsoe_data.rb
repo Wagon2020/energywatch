@@ -66,8 +66,8 @@ class EntsoeData
     energy_types.map { |fueltype, quantity| [fueltype, quantity] }
   end
 
-  def self.load
-    energy_types_array.sum
+  def self.forecast_renewable
+    JSON(Forecast.last.total_renewable)
   end
 
   private

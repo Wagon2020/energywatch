@@ -26,7 +26,47 @@ class EntsoeApi
     store_to_db
   end
 
+  def forecast_renewable
+    @doc_type = "A69"
+    @process_type = "A01"
+    url_all = "#{@base_url}securityToken=#{@token}&documentType=#{@doc_type}&processType=#{@process_type}&in_Domain=#{@domain}&periodStart=#{@date_start}&periodEnd=#{@date_end}"
+    url = open(url_all)
+    data = Hash.from_xml(url)
+    energy_array = data["GL_MarketDocument"]["TimeSeries"]
+    output = {}
+    energy_array.each do |entry|
+      if entry["inBiddingZone_Domain.mRID"]
+        output[entry["MktPSRType"]["psrType"]] = entry["Period"]["Point"]
+      end
+    end
+
+    total_array = []
+    output.each do |out|
+      time_entry = Time.new(2020, 1, 1, 0)
+      out[1].each_with_index do |step, index|
+        if total_array[index]
+          old_value = total_array[index][time_entry.strftime("%k:%M")].to_i
+          new_value = step["quantity"].to_i
+          total_array[index][time_entry.strftime("%k:%M")] = (old_value + new_value).to_s
+        else
+          total_array << { time_entry.strftime("%k:%M") => step["quantity"].to_i }
+        end
+        time_entry += 15.minutes
+      end
+    end
+    output["total"] = total_array
+    store_forecast(output)
+  end
+
   private
+
+  def store_forecast(data)
+    new_forecast = Forecast.new(solar: JSON(data["B16"]),
+                                wind_offshore: JSON(data["B18"]),
+                                wind_onshore: JSON(data["B19"]),
+                                total_renewable: JSON(data["total"]))
+    new_forecast.save!
+  end
 
   def store_to_db
     new_mix = EnergyMix.new(biomass: @global_data["B01"]["quantity"].to_i,

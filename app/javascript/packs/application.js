@@ -32,6 +32,8 @@ import { scroller } from '../components/scroll_event';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -50,5 +52,12 @@ document.addEventListener('turbolinks:load', () => {
   let line = document.querySelector('#chart-line');
   if (line){
     new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
+  }
+
+  // chart set up for forecast data
+  let forecast = document.querySelector('#chart-forecast');
+  if (forecast){
+    // gon.test_data to be replaced with forecast data
+    new Chartkick.LineChart("chart-forecast", gon.test_data, {colors: ["#1fe5bd"], legend: "bottom"})
   }
 });

@@ -44,5 +44,4 @@ class SmartPlugData
     JSON(result)
   end
 
-
 end

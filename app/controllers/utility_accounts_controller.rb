@@ -10,6 +10,24 @@ class UtilityAccountsController < ApplicationController
     end
   end
 
+  def edit
+    @utility_account = UtilityAccount.find(params[:id])
+  end
+
+  def update
+    @utility_account = UtilityAccount.find(params[:id])
+    @utility_account.update(smart_home_system_params)
+
+    redirect_to profile_path
+  end
+
+  def destroy
+    @utility_account = UtilityAccount.find(params[:id])
+    @utility_account.destroy
+
+    redirect_to profile_path
+  end
+
   private
 
   def utility_account_params

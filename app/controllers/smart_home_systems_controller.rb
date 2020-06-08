@@ -10,6 +10,24 @@ class SmartHomeSystemsController < ApplicationController
     end
   end
 
+  def edit
+    @smart_home_system = SmartHomeSystem.find(params[:id])
+  end
+
+  def update
+    @smart_home_system = SmartHomeSystem.find(params[:id])
+    @smart_home_system.update(smart_home_system_params)
+
+    redirect_to profile_path
+  end
+
+  def destroy
+    @smart_home_system = SmartHomeSystem.find(params[:id])
+    @smart_home_system.destroy
+
+    redirect_to profile_path
+  end
+
   private
 
   def smart_home_system_params

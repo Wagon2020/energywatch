@@ -18,7 +18,7 @@
 .nav-pills {
   width: 100px;
   background-color: $light-green;
-  height: 100vh;
+  height: 150vh;
 }
 
 
@@ -32,5 +32,14 @@ li {
   padding: 8px 8px;
   margin: 8px 8px;
   width: 30%;
-  display:flex;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  display: inline-block;
 }
+
+.fa-pencil-alt,
+.fa-trash-alt {
+  justify-content: flex-end;
+  padding: 4px;
+  margin: 4px;
+}
+

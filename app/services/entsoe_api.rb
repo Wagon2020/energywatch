@@ -26,6 +26,30 @@ class EntsoeApi
     store_to_db
   end
 
+  def forecast_renewable
+    @doc_type = "A69"
+    @process_type = "A01"
+    url_all = "#{@base_url}securityToken=#{@token}&documentType=#{@doc_type}&processType=#{@process_type}&in_Domain=#{@domain}&periodStart=#{@date_start}&periodEnd=#{@date_end}"
+    url = open(url_all)
+    data = Hash.from_xml(url)
+    energy_array = data["GL_MarketDocument"]["TimeSeries"]
+    output = {}
+    energy_array.each do |entry|
+      if entry["inBiddingZone_Domain.mRID"]
+        output[entry["MktPSRType"]["psrType"]] = entry["Period"]["Point"]
+      end
+    end
+    total_array = energy_array[0]["Period"]["Point"]
+    output.each do |out|
+      out[1].each_with_index do |step, index|
+        puts "step: #{step}, index: #{index}"
+        total_array[index]["quantity"] = (total_array[index]["quantity"].to_i + step["quantity"].to_i).to_s
+      end
+    end
+    output["total"] = total_array
+    output
+  end
+
   private
 
   def store_to_db

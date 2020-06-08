@@ -16,7 +16,7 @@ class UtilityAccountsController < ApplicationController
 
   def update
     @utility_account = UtilityAccount.find(params[:id])
-    @utility_account.update(smart_home_system_params)
+    @utility_account.update(utility_account_params)
 
     redirect_to profile_path
   end

@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 2020_06_06_142403) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "generations", force: :cascade do |t|
+    t.string "fuel_type"
+    t.integer "generation_capacity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "smart_home_systems", force: :cascade do |t|
     t.string "name"
     t.string "system_type"

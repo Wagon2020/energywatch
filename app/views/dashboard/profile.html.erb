@@ -47,8 +47,7 @@
          <% @user.smart_home_systems.each do |smart_home_system| %>
          <br>
          <ul>
-         <li>System Name: <%= smart_home_system.name %></li>
-         <li>System Type:<%= smart_home_system.system_type %></li>
+         <li><%= smart_home_system.system_type %></li>
          </ul>
          <% end %>
          <hr>

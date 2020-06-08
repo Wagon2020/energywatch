@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_142403) do
+ActiveRecord::Schema.define(version: 2020_06_08_100152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appliances", force: :cascade do |t|
     t.string "appliance_type"
-    t.float "energy_performance"
     t.bigint "user_id", null: false
     t.bigint "smart_home_system_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "energy_performance"
+    t.integer "energy_consumption"
     t.index ["smart_home_system_id"], name: "index_appliances_on_smart_home_system_id"
     t.index ["user_id"], name: "index_appliances_on_user_id"
   end
@@ -72,7 +73,6 @@ ActiveRecord::Schema.define(version: 2020_06_06_142403) do
   end
 
   create_table "smart_home_systems", force: :cascade do |t|
-    t.string "name"
     t.string "system_type"
     t.string "username"
     t.string "password"
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 2020_06_06_142403) do
 
   create_table "utility_accounts", force: :cascade do |t|
     t.string "email"
-    t.string "username"
     t.string "password"
     t.string "meter_ref"
     t.bigint "energy_provider_id", null: false

@@ -36,13 +36,13 @@ import { toggle_charts } from '../components/toggle_button';
 // import { initSelect2 } from '../components/init_select2';
 import { initSelect2 } from '../components/init_select2';
 
-initSelect2();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroller();
   toggle_charts();
+  initSelect2();
 
   let donut = document.querySelector('#chart-donut');
   if (donut) {

@@ -103,10 +103,6 @@ class EntsoeData
     data.reduce({}) do |m, e|
       e.each { |k, v| m[k] = v.to_i }; m
     end
-
-    # EntsoeData.forecast_renewable.reduce({}) do |m, e|
-    #   e.each { |k, v| m[k] = v.to_i }; m
-    # end
   end
 
   def self.renewable

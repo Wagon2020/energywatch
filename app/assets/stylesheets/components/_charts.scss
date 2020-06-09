@@ -1,0 +1,37 @@
+.forecast-container {
+  height: 300px;
+  width: 800px;
+  position: relative;
+  // background-color: rgb(200,200,200);
+  text-align: center;
+}
+
+.toggle-details {
+  z-index: 2;
+  position: absolute;
+  padding: 0;
+  right: 16px;
+  top: 16px;
+  width: 60px;
+  height: 24px;
+  background-color: #FB1E7F;
+  font-size: 12px;
+}
+
+.chart-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s;
+}
+
+.chart-visible{
+  opacity: 1;
+  z-index: 1;
+}
+
+.chart-hidden{
+  opacity: 0;
+  z-index: 0;
+}

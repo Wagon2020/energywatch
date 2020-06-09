@@ -39,10 +39,11 @@
 
 </div>
 
-
-<div class="recommendation">
-    <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click <%= link_to "here.", details_path %></p>
-</div>
+<%= link_to details_path do %>
+  <div class="recommendation">
+      <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click here.</p>
+  </div>
+<% end %>
 
 
 

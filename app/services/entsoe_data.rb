@@ -40,22 +40,22 @@ class EntsoeData
 
   def self.energy_types
     data = EnergyMix.last
-    { biomass: data.biomass,
-      fossil_brown_coal: data.fossil_brown_coal,
-      fossil_gas: data.fossil_gas,
-      fossil_hard_coal: data.fossil_hard_coal,
-      fossil_oil: data.fossil_oil,
-      geothermal: data.geothermal,
-      hydro_pumped_storage: data.hydro_pumped_storage,
-      hydro_run_of_river_poundage: data.hydro_run_of_river_poundage,
-      hydro_water_reservoir: data.hydro_water_reservoir,
-      nuclear: data.nuclear,
-      other_renewable: data.other_renewable,
-      solar: data.solar,
-      waste: data.waste,
-      wind_offshore: data.wind_offshore,
-      wind_onshore: data.wind_onshore,
-      other: data.other }
+    { "biomass": data.biomass,
+      "fossil brown coal": data.fossil_brown_coal,
+      "fossil gas": data.fossil_gas,
+      "fossil hard coal": data.fossil_hard_coal,
+      "fossil oil": data.fossil_oil,
+      "geothermal": data.geothermal,
+      "hydro pumped storage": data.hydro_pumped_storage,
+      "hydro run of river poundage": data.hydro_run_of_river_poundage,
+      "hydro water reservoir": data.hydro_water_reservoir,
+      "nuclear": data.nuclear,
+      "other renewable": data.other_renewable,
+      "solar": data.solar,
+      "waste": data.waste,
+      "wind offshore": data.wind_offshore,
+      "wind onshore": data.wind_onshore,
+      "other": data.other }
   end
 
   def self.created_at

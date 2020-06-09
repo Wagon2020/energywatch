@@ -61,9 +61,9 @@ document.addEventListener('turbolinks:load', () => {
     new Chartkick.LineChart("chart-re-forecast", gon.renewable_forecast, {colors: ["#1fe5bd"], legend: "bottom"})
   }
   // chart set up for forecast data
-  let forecast = document.querySelector('#chart-forecast');
-  if (forecast){
+  let re_forecast_breakdown = document.querySelector('#chart-forecast');
+  if (re_forecast_breakdown){
     // gon.test_data to be replaced with forecast data
-    new Chartkick.LineChart("chart-forecast", gon.test_data, {colors: ["#1fe5bd"], legend: "bottom"})
+    new Chartkick.LineChart("chart-forecast", gon.test_data, {stacked: true, colors: ["#1fe5bd", "#FB1E7F", "#FFFF3F"], legend: "bottom"})
   }
 });

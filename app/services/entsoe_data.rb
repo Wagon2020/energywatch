@@ -82,8 +82,16 @@ class EntsoeData
     forecast_reformat(JSON(Forecast.last.wind_onshore))
   end
 
+  def self.renewable_breakdown
+    [
+      { name: "solar", data: forecast_solar, stack: "renewable" },
+      { name: "offshore-wind", data: forecast_wind_offshore, stack: "renewable" },
+      { name: "onshore-wind", data: forecast_wind_onshore, stack: "renewable" }
+    ]
+  end
+
   def self.forecast_recommendation
-    re = EntsoeData.forecast_re_int
+    re = EntsoeData.forecast_total
     range = re.select {|k, v| re[k] >= 20000}
     "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
   end

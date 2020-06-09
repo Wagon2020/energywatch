@@ -30,6 +30,7 @@
       <div class="background-card"></div>
       <div class="donut">
         <h3>Energy mix</h3>
+        <div class="overlay"></div>
         <div id="chart-donut" style="height: 400px;"></div>
       </div>
       <h4 class="renewable-share"><strong><%= @re %> %</strong><br>Renewable</h4>
@@ -39,10 +40,11 @@
 
 </div>
 
-
-<div class="recommendation">
-    <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click <%= link_to "here.", details_path %></p>
-</div>
+<%= link_to details_path do %>
+  <div class="recommendation">
+      <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click here.</p>
+  </div>
+<% end %>
 
 
 

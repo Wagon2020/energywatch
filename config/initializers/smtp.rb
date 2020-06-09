@@ -1,8 +1,8 @@
 ActionMailer::Base.smtp_settings = {
-  address: "mail.privateemail.com",
-  port: 465,
+  address: ENV['MAIL_Hosting'],
+  port: ENV['MAIL_PORT'],
   ssl: true,
-  domain: 'www.privateemail123.com',
+  domain: ENV['MAIL_DOMAIN'],
   user_name: ENV['MAIL_ADDRESS'],
   password: ENV['MAIL_APP_PASSWORD'],
   authentication: :login,

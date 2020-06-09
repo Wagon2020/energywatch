@@ -29,8 +29,12 @@ require("chart.js")
 import "bootstrap";
 import { scroller } from '../components/scroll_event';
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initSelect2 } from '../components/init_select2';
+
+initSelect2();
 
 
 

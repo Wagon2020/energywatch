@@ -97,6 +97,14 @@ class EntsoeData
     "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
   end
 
+  def self.forecast_min
+    forecast_total.min_by { |_k, v| v }
+  end
+
+  def self.forecast_max
+    forecast_total.max_by { |_k, v| v }
+  end
+
   private
 
   def self.forecast_reformat(data)

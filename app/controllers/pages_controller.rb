@@ -16,12 +16,14 @@ class PagesController < ApplicationController
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
     @forecast_rec = EntsoeData.forecast_recommendation # returns string with range of time for best re
-
+    @forecast_max = EntsoeData.forecast_max
+    @forecast_min = EntsoeData.forecast_min
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
 
     gon.renewable_forecast = EntsoeData.forecast_total
+    gon.re_breakdown_data = EntsoeData.renewable_breakdown
   end
 
   def data
@@ -40,7 +42,7 @@ class PagesController < ApplicationController
     gon.renewable_forecast = EntsoeData.forecast_total
 
     # gon.test_data now with renewable breakdown
-    gon.test_data = EntsoeData.renewable_breakdown
+    gon.re_breakdown_data = EntsoeData.renewable_breakdown
   end
 
   def download_pdf

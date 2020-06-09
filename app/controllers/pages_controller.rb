@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :details, :data]
+  skip_before_action :authenticate_user!, only: [:home, :details, :data, :download_pdf]
 
   def home
     @data = EntsoeData.energy_types

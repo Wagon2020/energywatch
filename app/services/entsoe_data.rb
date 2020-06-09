@@ -94,7 +94,7 @@ class EntsoeData
     re = forecast_total
     max = re.max_by { |_k, v| v }
     range = re.select { |k, _v| re[k] >= (0.8 * max[1]).round }
-    "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
+    # "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
   end
 
   def self.forecast_min

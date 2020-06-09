@@ -9,12 +9,14 @@
 
 .forecast-cards {
   height: 400px;
+  max-width: 600px;
   margin-right: 30px;
 }
 
 .forecast-summary {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 .forecast-text {
@@ -37,25 +39,35 @@
 }
 
 .forecast-rec {
+  display: flex;
+  align-items: center;
   text-align: center;
-  height: 100px;
+  height: 150px;
   width: auto;
-  background-color: blue;
+  padding: 10px 20px;
+  background-color: #6147FF;
   border-radius: 20px;
 }
 
 .forecast-max {
+  display: flex;
+  align-items: center;
   text-align: center;
-  height: 100px;
+  height: 150px;
   width: auto;
-  background-color: blue;
+  margin: 0px 10px;
+  padding: 10px 20px;
+  background-color: #6DE676;
   border-radius: 20px;
 }
 
 .forecast-min {
+  display: flex;
+  align-items: center;
   text-align: center;
-  height: 100px;
+  height: 150px;
   width: auto;
-  background-color: blue;
+  padding: 10px 20px;
+  background-color: #FF7F24;
   border-radius: 20px;
 }

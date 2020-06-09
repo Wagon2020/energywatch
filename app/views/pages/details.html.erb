@@ -1,7 +1,7 @@
 <%= include_gon %>
 
 <div class="container">
-  <h1 style="margin-bottom: 30px">NOW</h1>
+  <h1 style="margin: 50px 0px 20px 0px;">Electricity mix in real-time</h1>
 
   <div class="now">
     <div class="charts-details">
@@ -15,14 +15,14 @@
   </div>
 
 
-  <h1 style="margin-bottom: 30px">FORECAST</h1>
+  <h1 style="margin: 50px 0px 20px 0px;">Forecast</h1>
 
   <div class="forecast">
     <div class="forecast-cards">
       <div class="forecast-summary">
-        <div class="forecast-rec"><%= @forecast_rec %></div>
-        <div class="forecast-max"><%= @forecast_max %></div>
-        <div class="forecast-min"><%= @forecast_min %></div>
+        <div class="forecast-rec"><p><i class="fas fa-star"></i><br>Best time is between<br><%= @forecast_rec.first[0] %> and <%= @forecast_rec.to_a.last[0] %></p></div>
+        <div class="forecast-max"><p><i class="fas fa-seedling"></i><br>Highest share of renewables <br>at <%= @forecast_max[0] %></p></div>
+        <div class="forecast-min"><p><i class="fas fa-dizzy"></i><br>Lowest share of renewables <br>at <%= @forecast_min[0] %></p></div>
       </div>
 
       <div class="forecast-text">

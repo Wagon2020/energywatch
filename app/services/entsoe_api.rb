@@ -51,6 +51,9 @@ class EntsoeApi
         else
           total_array << { time_entry.strftime("%k:%M") => step["quantity"].to_i }
         end
+        step[time_entry.strftime("%k:%M")] = step["quantity"].to_i
+        step.delete "position"
+        step.delete "quantity"
         time_entry += 15.minutes
       end
     end

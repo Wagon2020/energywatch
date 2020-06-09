@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :pwned_password
+         :pwned_password, :confirmable
 
   has_many :appliances
   has_many :smart_home_systems

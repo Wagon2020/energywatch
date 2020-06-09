@@ -14,9 +14,12 @@
 
             <%= f.error_notification %>
 
-            <%= f.input :appliance_type %>
+            <%= f.input :appliance_type, as: :select, collection: Appliance::APPLIANCES, input_html: { class: 'select2' } %>
+            <%#= select_tag :appliance_type, options_from_collection_for_select(
+                Appliance::APPLIANCES),
+                class: 'select2' %>
 
-            <%= f.input :energy_performance, collection: Appliance.energy_performance_array, as: :select %>
+            <%= f.input :energy_performance, collection: Appliance.energy_performance_array, as: :select, input_html: { class: 'select2' } %>
 
             <%= f.input :energy_consumption %>
 
@@ -46,7 +49,7 @@
 
     <%= f.error_notification %>
 
-    <%= f.input :system_type, collection: SmartHomeSystem.type_array, as: :select %>
+    <%= f.input :system_type, collection: SmartHomeSystem.type_array, as: :select, input_html: { class: 'select2' }%>
 
     <%= f.input :username %>
 
@@ -78,7 +81,7 @@
 
     <%= f.error_notification %>
 
-    <%= f.input :energy_provider_id, collection: @energy_providers, as: :select %>
+    <%= f.input :energy_provider_id, collection: @energy_providers, as: :select, input_html: { class: 'select2' } %>
 
     <!-- NB: need an option, where IF your energy provider is not in the list, ADD a new one -->
 

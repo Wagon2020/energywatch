@@ -28,11 +28,12 @@ li {
 
 .profile-card {
   border: 1px solid $energywatch-green;
+  border-radius: 5px;
   background-color: $light-green;
   padding: 8px 8px;
   margin: 10px 10px;
   width: 30%;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
   display: inline-block;
 }
 

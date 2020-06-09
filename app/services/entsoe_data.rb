@@ -7,7 +7,7 @@ class EntsoeData
     renewable_sum = 0
     fossil_sum = 0
     other_sum = 0
-    nuclear_sum = data[:nuclear]
+    nuclear_sum = data["nuclear"]
     data.each do |key, value|
       if renewable.include? key
         renewable_sum += value
@@ -40,22 +40,22 @@ class EntsoeData
 
   def self.energy_types
     data = EnergyMix.last
-    { biomass: data.biomass,
-      fossil_brown_coal: data.fossil_brown_coal,
-      fossil_gas: data.fossil_gas,
-      fossil_hard_coal: data.fossil_hard_coal,
-      fossil_oil: data.fossil_oil,
-      geothermal: data.geothermal,
-      hydro_pumped_storage: data.hydro_pumped_storage,
-      hydro_run_of_river_poundage: data.hydro_run_of_river_poundage,
-      hydro_water_reservoir: data.hydro_water_reservoir,
-      nuclear: data.nuclear,
-      other_renewable: data.other_renewable,
-      solar: data.solar,
-      waste: data.waste,
-      wind_offshore: data.wind_offshore,
-      wind_onshore: data.wind_onshore,
-      other: data.other }
+    { "biomass" => data.biomass,
+      "fossil brown coal" => data.fossil_brown_coal,
+      "fossil gas" => data.fossil_gas,
+      "fossil hard coal" => data.fossil_hard_coal,
+      "fossil oil" => data.fossil_oil,
+      "geothermal" => data.geothermal,
+      "hydro pumped storage" => data.hydro_pumped_storage,
+      "hydro run of river poundage" => data.hydro_run_of_river_poundage,
+      "hydro water reservoir" => data.hydro_water_reservoir,
+      "nuclear" => data.nuclear,
+      "other renewable" => data.other_renewable,
+      "solar" => data.solar,
+      "waste" => data.waste,
+      "wind offshore" => data.wind_offshore,
+      "wind onshore" => data.wind_onshore,
+      "other" => data.other }
   end
 
   def self.created_at
@@ -115,32 +115,32 @@ class EntsoeData
 
   def self.renewable
     # ["B01", "B09", "B10", "B11", "B12", "B13", "B15", "B16", "B18", "B19"]
-    [:biomass,
-     :geothermal,
-     :hydro_pumped_storage,
-     :hydro_run_of_river_poundage,
-     :hydro_water_reservoir,
-     :other_renewable,
-     :solar,
-     :wind_offshore,
-     :wind_onshore]
+    ["biomass",
+     "geothermal",
+     "hydro pumped storage",
+     "hydro run of river poundage",
+     "hydro water reservoir",
+     "other renewable",
+     "solar",
+     "wind offshore",
+     "wind onshore"]
   end
 
   def self.fossil
     # ["B02", "B03", "B04", "B05", "B06", "B07", "B08"]
-    [:fossil_brown_coal,
-     :fossil_gas,
-     :fossil_hard_coal,
-     :fossil_oil]
+    ["fossil brown coal",
+     "fossil gas",
+     "fossil hard coal",
+     "fossil oil"]
   end
 
   def self.nuclear
     # ["B14"]
-    [:nuclear]
+    ["nuclear"]
   end
 
   def self.other
     # ["B17", "B20"]
-    [:waste, :other]
+    ["waste", "other"]
   end
 end

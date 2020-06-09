@@ -28,6 +28,8 @@ require("chart.js")
 // External imports
 import "bootstrap";
 import { scroller } from '../components/scroll_event';
+import { toggle_charts } from '../components/toggle_button';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroller();
+  toggle_charts();
 
   let donut = document.querySelector('#chart-donut');
   if (donut) {

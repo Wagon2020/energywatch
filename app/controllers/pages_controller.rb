@@ -21,8 +21,6 @@ class PagesController < ApplicationController
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
 
-    # gon.test_data below to be replaced with forecast data Hash
-    gon.test_data = PagesController.test_data
     gon.renewable_forecast = EntsoeData.forecast_total
   end
 
@@ -39,7 +37,10 @@ class PagesController < ApplicationController
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
-    gon.renewable_forecast = EntsoeData.forecast_re_int
+    gon.renewable_forecast = EntsoeData.forecast_total
+
+    # gon.test_data now with renewable breakdown
+    gon.test_data = EntsoeData.renewable_breakdown
   end
 
   def download_pdf

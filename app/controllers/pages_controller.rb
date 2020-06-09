@@ -15,6 +15,8 @@ class PagesController < ApplicationController
   def details
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
+    @forecast_rec = EntsoeData.forecast_recommendation # returns string with range of time for best re
+
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
@@ -30,11 +32,14 @@ class PagesController < ApplicationController
     @data_created_at = EntsoeData.created_at
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
+    # @AILIN: I changed the method here!!!
     @renewable_forecast = EntsoeData.forecast_total
     @solar_forecast = EntsoeData.forecast_solar # returns Hash of the latest renewable forecast (summed up)
+
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
+    gon.renewable_forecast = EntsoeData.forecast_re_int
   end
 
   def download_pdf

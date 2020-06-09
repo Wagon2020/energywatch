@@ -82,9 +82,11 @@ class EntsoeData
     forecast_reformat(JSON(Forecast.last.wind_onshore))
   end
 
-
-
-  # method below turns array of hashes into a hash and turns all values into integers.
+  def self.forecast_recommendation
+    re = EntsoeData.forecast_re_int
+    range = re.select {|k, v| re[k] >= 20000}
+    "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
+  end
 
   private
 

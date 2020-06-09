@@ -3,6 +3,8 @@ class Appliance < ApplicationRecord
     ["A+++", "A++", "A+", "A", "B", "C", "D"]
   end
 
+  APPLIANCES = ["Oven", "TV", "Washing Machine", "Coffee Machine", "Dishwasher", "Electric Toothbrush", "Freezer", "Refrigerator", "Stove", "Tumble Dryer", "Microwave", "Toaster", "Food Processor", "Hair Dryer", "Space-Heater"]
+
   belongs_to :user
   belongs_to :smart_home_system, optional: true
   has_many :consumption_entries, as: :consumption

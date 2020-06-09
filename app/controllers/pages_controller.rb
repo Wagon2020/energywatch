@@ -23,7 +23,7 @@ class PagesController < ApplicationController
 
     # gon.test_data below to be replaced with forecast data Hash
     gon.test_data = PagesController.test_data
-    gon.renewable_forecast = EntsoeData.forecast_re_int
+    gon.renewable_forecast = EntsoeData.forecast_total
   end
 
   def data
@@ -32,8 +32,10 @@ class PagesController < ApplicationController
     @data_created_at = EntsoeData.created_at
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
-    @renewable_forecast = EntsoeData.forecast_re_int # returns Hash of the latest renewable forecast (summed up)
-    @forecast_rec = EntsoeData.forecast_recommendation # returns string with range of time for best re
+    # @AILIN: I changed the method here!!!
+    @renewable_forecast = EntsoeData.forecast_total
+    @solar_forecast = EntsoeData.forecast_solar # returns Hash of the latest renewable forecast (summed up)
+
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array

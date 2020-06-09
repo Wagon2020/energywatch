@@ -66,15 +66,20 @@ class EntsoeData
     energy_types.map { |fueltype, quantity| [fueltype, quantity] }
   end
 
-  def self.forecast_renewable
-    JSON(Forecast.last.total_renewable)
+  def self.forecast_total
+    forecast_reformat(JSON(Forecast.last.total_renewable))
   end
 
-  # method below turns array of hashes into a hash and turns all values into integers.
+  def self.forecast_solar
+    forecast_reformat(JSON(Forecast.last.solar))
+  end
 
-  def self.forecast_re_int
-    EntsoeData.forecast_renewable.reduce({}) {|m,e|
-      e.each{|k,v| m[k] = v.to_i}; m}
+  def self.forecast_wind_offshore
+    forecast_reformat(JSON(Forecast.last.wind_offshore))
+  end
+
+  def self.forecast_wind_onshore
+    forecast_reformat(JSON(Forecast.last.wind_onshore))
   end
 
   def self.forecast_recommendation
@@ -84,6 +89,16 @@ class EntsoeData
   end
 
   private
+
+  def self.forecast_reformat(data)
+    data.reduce({}) do |m, e|
+      e.each { |k, v| m[k] = v.to_i }; m
+    end
+
+    # EntsoeData.forecast_renewable.reduce({}) do |m, e|
+    #   e.each { |k, v| m[k] = v.to_i }; m
+    # end
+  end
 
   def self.renewable
     # ["B01", "B09", "B10", "B11", "B12", "B13", "B15", "B16", "B18", "B19"]

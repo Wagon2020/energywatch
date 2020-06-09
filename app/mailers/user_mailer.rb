@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome
     @user = params[:user] # Instance variable => available in view
-    @url = "localhost:3000/users/sign_in"
+    # @url = "localhost:3000/users/sign_in"
     mail(to: @user.email, subject: 'Welcome to energywatch')
     # This will render a view in `app/views/user_mailer`!
   end

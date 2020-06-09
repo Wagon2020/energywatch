@@ -84,9 +84,9 @@ class EntsoeData
 
   def self.renewable_breakdown
     [
-      { name: "solar", data: forecast_solar, stack: "renewable" },
       { name: "offshore-wind", data: forecast_wind_offshore, stack: "renewable" },
-      { name: "onshore-wind", data: forecast_wind_onshore, stack: "renewable" }
+      { name: "onshore-wind", data: forecast_wind_onshore, stack: "renewable" },
+      { name: "solar", data: forecast_solar, stack: "renewable" }
     ]
   end
 

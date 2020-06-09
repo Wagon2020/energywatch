@@ -77,6 +77,12 @@ class EntsoeData
       e.each{|k,v| m[k] = v.to_i}; m}
   end
 
+  def self.forecast_recommendation
+    re = EntsoeData.forecast_re_int
+    range = re.select {|k, v| re[k] >= 20000}
+    "Best time is between #{range.first[0]} and #{range.to_a.last[0]}."
+  end
+
   private
 
   def self.renewable

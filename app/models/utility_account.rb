@@ -6,4 +6,6 @@ class UtilityAccount < ApplicationRecord
   validates :password, presence: true
   validates :email, presence: true
   validates :meter_ref, presence: true
+
+  #accepts_nested_attributes_for :energy_provider, reject_if: :all_blank, allow_destroy: true
 end

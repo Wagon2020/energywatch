@@ -84,7 +84,7 @@
     <%= f.input :energy_provider_id, collection: @energy_providers, as: :select, input_html: { class: 'select2' } %>
 
     <!-- NB: need an option, where IF your energy provider is not in the list, ADD a new one -->
-
+    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#energyProvModal" data-whatever="@mdo">Energy Provider Not in the List?</button>
     <%= f.input :meter_ref %>
 
     <%= f.input :email %>

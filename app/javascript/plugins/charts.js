@@ -54,8 +54,8 @@ const donut_test = () => {
             datasets: [{
                 data: data,
                 label: 'Renewables Doughnut',
-                borderColor: ["#1fe5bd", "#FB1E7F", "#A6D9F7", "#FFFF3F"],
-                backgroundColor: ["#1fe5bd", "#FB1E7F", "#A6D9F7", "#FFFF3F"],
+                borderColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
+                backgroundColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
             }],
         },
         options: {
@@ -71,7 +71,7 @@ const detailsBar = () => {
   if (bar){
     new Chartkick.BarChart("chart-bar",
                             gon.chart_data,
-                            {colors: ["#1fe5bd"], suffix: " MW"})
+                            {colors: ["#6147FF"], suffix: " MW"})
 
   };
 }
@@ -81,7 +81,7 @@ const renewableForecast = () => {
   if (re_forecast){
     new Chartkick.LineChart("chart-re-forecast",
                             gon.renewable_forecast,
-                            {colors: ["#1fe5bd"],
+                            {colors: ["#6147FF"],
                             legend: "bottom", ytitle: "MegaWatt",
                             label: "all renewables", points: false} )
   };
@@ -91,7 +91,7 @@ const renewableForecast = () => {
     new Chartkick.ColumnChart("chart-forecast",
                               gon.re_breakdown_data,
                               {stacked: true,
-                              colors: ["#1fe5bd", "#FB1E7F", "#FFFF3F"],
+                              colors: ["#6147FF", "#9484ff", "#d5ceff"],
                               legend: "bottom", ytitle: "MegaWatt"})
   };
 }
@@ -99,7 +99,7 @@ const renewableForecast = () => {
 const donut = () => {
   const donut = document.querySelector('#chart-donut');
   if (donut) {
-    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#1fe5bd", "#FB1E7F", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"], legend: "bottom", donut: true})
   };
 }
 

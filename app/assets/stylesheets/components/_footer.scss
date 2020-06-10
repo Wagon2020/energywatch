@@ -1,4 +1,7 @@
 .footer {
+  position: absolute;
+  bottom: -80;
+  width: 100vw;
   background: $energywatch-green;
   display: flex;
   align-items: center;
@@ -26,4 +29,3 @@
 .footer .fa-heart {
   color: white;
 }
-

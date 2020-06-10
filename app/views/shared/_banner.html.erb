@@ -1,0 +1,9 @@
+<div class="banner">
+  <div class="banner-text">
+    <h2>When it comes to energy, timing is everything.</h2>
+    <h4>Smart energy starts with you! 🌍 💗</h4><br>
+    <% if !current_user.present? %>
+      <%= link_to "Sign up, be a hero!", new_user_session_path, class: "btn-gradient"  %>
+    <% end %>
+  </div>
+</div>

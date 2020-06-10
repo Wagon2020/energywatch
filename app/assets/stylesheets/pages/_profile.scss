@@ -41,3 +41,9 @@ li {
   margin-top: 12px;
 }
 
+.page-content {
+  min-height: calc(100vh - 76.8px);
+  // position: relative;
+  width: 100vw;
+  // top: 76.8px;
+}

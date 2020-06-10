@@ -1,0 +1,36 @@
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), image-url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 95vh;
+  position: absolute;
+  top: -77px;
+  left: 0;
+}
+
+.banner-text {
+  margin: 400px 50px 100px 50px;
+}
+
+.banner {
+  h2 {
+    margin: 0px;
+    margin-top: 70px;
+    padding: 0px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+  }
+
+  h4 {
+    margin: 0px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.banner-spacer {
+  height: calc( 95vh - 120px);
+}

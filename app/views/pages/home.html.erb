@@ -36,11 +36,11 @@
 
 <div class="recommendation">
   <%= link_to details_path do %>
-    <p><i class="fas fa-bolt"></i> <%= @recommendations %><br>To find out more, click here.</p>
+    <p><i class="fas fa-bolt"></i> <%= @recommendations %><br><strong>To find out more, click here.</strong></p>
   <% end %>
 </div>
 
 
 
-<%= link_to 'Download PDF', home_download_pdf_path %>
+
 <%= include_gon %>

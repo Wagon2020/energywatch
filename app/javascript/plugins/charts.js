@@ -36,7 +36,7 @@ const smartPlugMonthTest = () => {
         options: {
           legend: { position: 'bottom',
                     onClick:  stefan },
-          elements: { point:{ radius: 3, onClick:  stefan }}
+          elements: { point:{ radius: 3 }}
         }
     });
 
@@ -89,7 +89,7 @@ const renewableForecast = () => {
   let re_forecast_breakdown = document.querySelector('#chart-forecast');
   if (re_forecast_breakdown){
     new Chartkick.ColumnChart("chart-forecast",
-                              gon.test_data,
+                              gon.re_breakdown_data,
                               {stacked: true,
                               colors: ["#1fe5bd", "#FB1E7F", "#FFFF3F"],
                               legend: "bottom", ytitle: "MegaWatt"})
@@ -109,6 +109,7 @@ const showCharts = () => {
   detailsBar();
   renewableForecast();
   smartPlugMonthTest();
+  donut_test();
 }
 
 

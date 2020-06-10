@@ -1,0 +1,65 @@
+.overview-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.overview-card {
+  position: relative;
+  height: 150px;
+  min-width: 250px;
+  padding: 10px 20px;
+  background-color: $ew-midpurple;
+  border-radius: 20px;
+
+  i {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    color: white;
+    font-size: 42px;
+  }
+
+  p {
+    text-align: right;
+    font-size: 20px;
+    color: $ew-darkgrey;
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+  }
+}
+
+.overview-header {
+ margin-bottom: 30px;
+ color: $ew-darkgrey;
+ font-size: 25px;
+}
+
+.smart-plug-frame {
+  width: 750px;
+  border-radius: 20px;
+  border: 5px solid $ew-lightgrey;
+  padding: 10px;
+}
+
+.overview-card-appliances {
+  position: relative;
+  height: auto;
+  margin-left: 20px;
+  width: 320px;
+  padding: 10px 20px;
+  background-color: $ew-lightpurple;
+  border-radius: 20px;
+
+  i {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    color: white;
+    font-size: 42px;
+  }
+
+}
+
+

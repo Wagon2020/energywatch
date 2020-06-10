@@ -7,6 +7,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
+  // align-items: center;
   background: $ew-purple;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -21,6 +22,11 @@
 
 .nav-link {
   margin: 8px 0px;
+}
+
+.nav-title {
+  margin: 12px 0px;
+  color: white;
 }
 
 .home_nav {

@@ -14,6 +14,7 @@
   <body>
     <% if current_page?(root_path) %>
       <%= render 'shared/navbar', style_class: "home_nav"  %>
+      <%= render 'shared/banner'%>
     <% else %>
       <%= render 'shared/navbar', style_class: "" %>
     <% end %>

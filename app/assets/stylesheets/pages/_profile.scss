@@ -18,7 +18,7 @@
 .nav-pills {
   width: 100px;
   background-color: $light-green;
-  height: 150vh;
+  height: 100vh;
 }
 
 
@@ -41,3 +41,9 @@ li {
   margin-top: 12px;
 }
 
+.btn-outline-primary {
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  opacity: 70%;
+}

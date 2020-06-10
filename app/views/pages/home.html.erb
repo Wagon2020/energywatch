@@ -22,8 +22,9 @@
 
       <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
 
-
-      <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
+      <% if !current_user.present? %>
+        <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
+      <% end %>
     </div>
 
     <div class="donut-frame">

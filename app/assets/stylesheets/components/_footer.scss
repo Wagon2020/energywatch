@@ -2,7 +2,7 @@
   position: absolute;
   bottom: -80;
   width: 100vw;
-  background: $energywatch-green;
+  background: $ew-purple;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,7 @@
 }
 .footer-links a:hover {
   opacity: 1;
-  color: grey;
+  color: white;
 }
 .footer .fa-heart {
   color: white;

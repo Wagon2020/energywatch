@@ -28,13 +28,15 @@ const smartPlugDaily = () => {
                   data: data,
                   label: 'Watt',
                   borderColor: ["#1fe5bd"],
-                  backgroundColor: ["#1fe5bd"],
+                  backgroundColor: ["#1fe5bd"]
               }],
           },
           options: {
             legend: { position: 'bottom',
                       onClick:  stefan },
-            elements: { point:{ radius: 3 }}
+            elements: { point:{ radius: 0 }},
+            tooltips: { mode: 'index', intersect: false },
+            hover: { mode: 'nearest', intersect: true }
           }
       });
   };
@@ -58,9 +60,11 @@ const smartPlugMonthTest = () => {
               labels: labels,
               datasets: [{
                   data: data,
-                  label: 'Watts per day',
+                  label: 'W/h',
                   borderColor: ["#1fe5bd"],
                   backgroundColor: ["#1fe5bd"],
+                  pointBackgroundColor: 'rgba(31, 229, 189, 1)',
+                  fill: false
               }],
           },
           options: {
@@ -147,7 +151,7 @@ const showCharts = () => {
 
 
 const stefan = () => {
-  console.log("Stefan klickt")
+  console.log("energywatch is awesome!")
 }
 
 

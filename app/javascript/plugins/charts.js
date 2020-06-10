@@ -10,6 +10,36 @@ const smartPlugMonth = () => {
   };
 }
 
+const smartPlugDaily = () => {
+  const line = document.querySelector('#smart-plug-daily');
+  let data = []
+  let labels = []
+
+  for (let [key, value] of Object.entries(gon.smart_plug_daily)) {
+    data.push(value);
+    labels.push(key);
+  }
+  if (line){
+        var myChart = new Chart(line, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  data: data,
+                  label: 'Watt',
+                  borderColor: ["#1fe5bd"],
+                  backgroundColor: ["#1fe5bd"],
+              }],
+          },
+          options: {
+            legend: { position: 'bottom',
+                      onClick:  stefan },
+            elements: { point:{ radius: 3 }}
+          }
+      });
+  };
+}
+
 const smartPlugMonthTest = () => {
   const line = document.querySelector('#smart-plug-month');
   let data = []
@@ -111,7 +141,8 @@ const showCharts = () => {
   detailsBar();
   renewableForecast();
   smartPlugMonthTest();
-  donut_test();
+  // donut_test();
+  smartPlugDaily();
 }
 
 

@@ -13,5 +13,3 @@ const toggle_charts = () => {
 }
 
 export { toggle_charts }
-
-

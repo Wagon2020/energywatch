@@ -28,8 +28,9 @@ require("chart.js")
 // External imports
 import "bootstrap";
 import { scroller } from '../components/scroll_event';
-import { toggle_charts } from '../components/toggle_button';
+// import { toggle_charts } from '../components/toggle_button';
 import { showCharts } from '../plugins/charts';
+import { toggle_charts } from '../components/toggle_charts';
 
 
 

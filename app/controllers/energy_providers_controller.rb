@@ -5,7 +5,7 @@ class EnergyProvidersController < ApplicationController
     if @energy_provider.save
       redirect_to profile_path, notice: 'Energy provider successfully added.'
     else
-      redirect_to profile_path, notice: 'Error: No information entered.'
+      redirect_to profile_path, notice: 'Error: Something Went Wrong'
     end
   end
 

@@ -1,27 +1,48 @@
 <%= include_gon %>
 
 <div class="container">
+<!-- <<<<<<< HEAD -->
 <h1 style="text-align: center; margin-bottom: 30px">Electricity generation by fuel type in MW</h1>
 <%= render 'smart_plug_month' %>
+<!-- ======= -->
+  <h1 style="margin: 50px 0px 20px 0px;">Electricity mix in real-time</h1>
 
-<div class="cards">
-  <div id="chart-bar" style="height: 500px; width: 800px;"></div>
-
-  <div class="card">
-    <h2><i class="far fa-lightbulb"></i>  Did you know?</h2>
-    <p>Corsair Sail ho bilged on her anchor transom matey mutiny belaying pin measured fer yer chains. Bring a spring upon her cable mizzen come about yawl crimp gangplank brig lugger.</p>
-
-    <p> Matey Chain Shot boom marooned deadlights maroon transom topgallant. Mizzenmast interloper line belay hands splice the main brace gabion black spot.</p>
-
-    <p>Gun Letter of Marque haul wind wench boatswain nipper case shot brigantine. Cat o'nine tails scuppers black spot Shiver me timbers gabion crimp grog blossom keel.</p>
+  <div class="now">
+    <div class="charts-details">
+      <div id="chart-bar" style="height: 300px; width: 500px;"></div>
+      <div id="chart-donut" style="height: 300px;"></div>
+    </div>
+    <div class="card">
+      <h2><i class="far fa-lightbulb"></i>  Did you know?</h2>
+      <p>Corsair Sail ho bilged on her anchor transom matey mutiny belaying pin measured fer yer chains. Bring a spring upon her cable mizzen come about yawl crimp gangplank brig lugger.</p>
+    </div>
   </div>
-</div>
+<!-- >>>>>>> master -->
 
 
-<div id="chart-re-forecast" style="height: 300px; width: 800px;"></div>
+  <h1 style="margin: 50px 0px 20px 0px;">Forecast</h1>
 
-<%= @forecast_rec %>
-<hr>
+  <div class="forecast">
+    <div class="forecast-cards">
+      <div class="forecast-summary">
+        <div class="forecast-rec"><p><i class="fas fa-star"></i><br>Best time is between<br><%= @forecast_rec.first[0] %> and <%= @forecast_rec.to_a.last[0] %></p></div>
+        <div class="forecast-max"><p><i class="fas fa-seedling"></i><br>Highest share of renewables <br>at <%= @forecast_max[0] %></p></div>
+        <div class="forecast-min"><p><i class="fas fa-dizzy"></i><br>Lowest share of renewables <br>at <%= @forecast_min[0] %></p></div>
+      </div>
+
+      <div class="forecast-text">
+        <h2><i class="far fa-lightbulb"></i>  Did you know?</h2>
+        <p>Corsair Sail ho bilged on her anchor transom matey mutiny belaying pin measured fer yer chains. Bring a spring upon her cable mizzen come about yawl crimp gangplank brig lugger.</p>
+      </div>
+    </div>
+
+    <%= render 'forecast' %>
 
 
+<!-- <<<<<<< HEAD -->
+
+<!-- ======= -->
+  <hr>
+  </div>
+<!-- >>>>>>> master -->
 </div>

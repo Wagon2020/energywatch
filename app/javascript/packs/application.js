@@ -60,8 +60,6 @@ document.addEventListener('turbolinks:load', () => {
 
   // };
 
-
-
   // chart for renewable forecast
   // let re_forecast = document.querySelector('#chart-re-forecast');
   // if (re_forecast){
@@ -78,4 +76,5 @@ document.addEventListener('turbolinks:load', () => {
   //   // gon.test_data to be replaced with forecast data
   //   new Chartkick.ColumnChart("chart-forecast", gon.test_data, {stacked: true, colors: ["#1fe5bd", "#FB1E7F", "#FFFF3F"], legend: "bottom", suffix: " MW"})
   // };
+
 });

@@ -1,3 +1,7 @@
+.dark-grey {
+  color: $ew-darkgrey;
+}
+
 .now {
   display: flex;
   justify-content: space-between;
@@ -24,6 +28,15 @@
     color: white;
     font-size: 30px;
   }
+
+  p {
+    position: absolute;
+    bottom: 5px;
+    right: 30px;
+    text-align: right;
+    font-size: 18px;
+    color: $ew-darkgrey;
+  }
 }
 
 
@@ -37,14 +50,6 @@
   i {
     background: $ew-purple;
     padding: 13px;
-  }
-
-  p {
-    position: absolute;
-    bottom: 5px;
-    right: 30px;
-    text-align: right;
-    font-size: 18px;
   }
 }
 
@@ -61,13 +66,6 @@
     background: #6DE676;
   }
 
-  p {
-    position: absolute;
-    bottom: 5px;
-    right: 30px;
-    text-align: right;
-    font-size: 18px;
-  }
 
 }
 
@@ -81,10 +79,5 @@
 
   i {
     background: #FF7F24;
-  }
-
-  p {
-    text-align: right;
-    font-size: 18px;
   }
 }

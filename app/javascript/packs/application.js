@@ -29,7 +29,7 @@ require("chart.js")
 import "bootstrap";
 import { scroller } from '../components/scroll_event';
 import { toggle_charts } from '../components/toggle_button';
-import { test_donut } from '../plugins/charts';
+import { showCharts } from '../plugins/charts';
 
 
 
@@ -44,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   scroller();
   toggle_charts();
   initSelect2();
-  test_donut();
+  showCharts();
 
   // let donut = document.querySelector('#chart-donut');
   // if (donut) {
@@ -59,10 +59,7 @@ document.addEventListener('turbolinks:load', () => {
 
   // };
 
-  let line = document.querySelector('#chart-line');
-  if (line){
-    new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
-  };
+
 
   // chart for renewable forecast
   // let re_forecast = document.querySelector('#chart-re-forecast');

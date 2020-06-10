@@ -46,20 +46,20 @@ document.addEventListener('turbolinks:load', () => {
 
   let donut = document.querySelector('#chart-donut');
   if (donut) {
-    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#1fe5bd", "#FB1E7F", "#A6D9F7", "#FFFF3F"], legend: "bottom", donut: true})
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"], legend: "bottom", donut: true})
   };
 
   let bar = document.querySelector('#chart-bar');
   if (bar){
     new Chartkick.BarChart("chart-bar",
                             gon.chart_data,
-                            {colors: ["#1fe5bd"], suffix: " MW"})
+                            {colors: ["#9484ff"], suffix: " MW"})
 
   };
 
   let line = document.querySelector('#chart-line');
   if (line){
-    new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
+    new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#d5ceff"]})
   };
 
   // chart for renewable forecast
@@ -68,13 +68,13 @@ document.addEventListener('turbolinks:load', () => {
     // gon.test_data to be replaced with forecast data
     new Chartkick.LineChart("chart-re-forecast",
                              gon.renewable_forecast,
-                             {colors: ["#1fe5bd"], legend: "bottom",
+                             {colors: ["#6147FF"], legend: "bottom",
                               label: "all renewables", points: false, suffix: " MW"})
   };
   // chart set up for forecast data
   let re_forecast_breakdown = document.querySelector('#chart-forecast');
   if (re_forecast_breakdown){
     // gon.test_data to be replaced with forecast data
-    new Chartkick.ColumnChart("chart-forecast", gon.re_breakdown_data, {stacked: true, colors: ["#1fe5bd", "#FB1E7F", "#FFFF3F"], legend: "bottom"})
+    new Chartkick.ColumnChart("chart-forecast", gon.re_breakdown_data, {stacked: true, colors: ["#6147FF", "#9484ff", "#d5ceff"], legend: "bottom"})
   };
 });

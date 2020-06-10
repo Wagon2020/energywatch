@@ -19,27 +19,27 @@ const smartPlugMonthTest = () => {
     data.push(value);
     labels.push(key);
   }
-  console.log(labels)
-  console.log(data)
-
-  var myChart = new Chart(line, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                label: 'Watts per day',
-                borderColor: ["#1fe5bd"],
-                backgroundColor: ["#1fe5bd"],
-            }],
-        },
-        options: {
-          legend: { position: 'bottom',
-                    onClick:  stefan },
-          elements: { point:{ radius: 3 }}
-        }
-    });
-
+  // console.log(labels)
+  // console.log(data)
+  if (line){
+    var myChart = new Chart(line, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  data: data,
+                  label: 'Watts per day',
+                  borderColor: ["#1fe5bd"],
+                  backgroundColor: ["#1fe5bd"],
+              }],
+          },
+          options: {
+            legend: { position: 'bottom',
+                      onClick:  stefan },
+            elements: { point:{ radius: 3 }}
+          }
+      });
+  };
 }
 
 const donut_test = () => {
@@ -47,22 +47,24 @@ const donut_test = () => {
   let data = []
   let labels = []
   gon.donut_data.forEach(element => { data.push(element[1]), labels.push(element[0]) });
-  var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                label: 'Renewables Doughnut',
-                borderColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
-                backgroundColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
-            }],
-        },
-        options: {
-          legend: { position: 'bottom',
-                    onClick:  stefan }
-        }
+  if (ctx){
+    var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              labels: labels,
+              datasets: [{
+                  data: data,
+                  label: 'Renewables Doughnut',
+                  borderColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
+                  backgroundColor: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"],
+              }],
+          },
+          options: {
+            legend: { position: 'bottom',
+                      onClick:  stefan }
+          }
     });
+  };
 }
 
 

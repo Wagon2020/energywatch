@@ -36,12 +36,6 @@
  font-size: 25px;
 }
 
-.smart-plug-frame {
-  width: 750px;
-  border-radius: 20px;
-  border: 5px solid $ew-lightgrey;
-  padding: 10px;
-}
 
 .overview-card-appliances {
   position: relative;
@@ -51,6 +45,8 @@
   padding: 10px 20px;
   background-color: $ew-lightpurple;
   border-radius: 20px;
+  font-size: 20px;
+
 
   i {
     position: absolute;
@@ -58,6 +54,20 @@
     left: 35px;
     color: white;
     font-size: 42px;
+  }
+
+  div {
+    position: absolute;
+    top: 100px;
+    left: 35px;
+  }
+
+  p {
+    color: white;
+  }
+
+  li {
+    list-style-type: disc;
   }
 
 }

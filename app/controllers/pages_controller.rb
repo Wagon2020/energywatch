@@ -32,7 +32,6 @@ class PagesController < ApplicationController
     @data_created_at = EntsoeData.created_at
     @data = EntsoeData.energy_types
     @donut = EntsoeData.donut
-    # @AILIN: I changed the method here!!!
     @renewable_forecast = EntsoeData.forecast_total
     @solar_forecast = EntsoeData.forecast_solar # returns Hash of the latest renewable forecast (summed up)
 
@@ -40,8 +39,6 @@ class PagesController < ApplicationController
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
     gon.renewable_forecast = EntsoeData.forecast_total
-
-    # gon.test_data now with renewable breakdown
     gon.re_breakdown_data = EntsoeData.renewable_breakdown
   end
 

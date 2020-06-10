@@ -1,8 +1,47 @@
 <%= include_gon %>
 
+
+
+
 <div class="container">
-  <h1 style="text-align: center; margin-bottom: 30px">My energy consumption</h1>
-  <canvas id="smart-plug-month" style="height: 300px; width: 800px;"></canvas>
+  <div class="overview-cards">
+    <div class="overview-card">
+      <i class="fas fa-euro-sign"></i>
+      <p>Your last bill<br>
+      <strong>EUR 65.18</strong></p>
+    </div>
+
+    <div class="overview-card">
+      <i class="fas fa-bolt"></i>
+      <p>Usage last month<br>
+      <strong>3760 kWh</strong></p>
+    </div>
+
+    <div class="overview-card">
+      <i class="fas fa-seedling"></i>
+      <p>CO2 emissions<br>
+      <strong>318g/kWh</strong></p>
+    </div>
+
+    <div class="overview-card">
+      <i class="fas fa-star"></i>
+    </div>
+
+  </div>
+
+  <h1 class= "overview-header">My energy consumption</h1>
+
+  <div class="overview-cards">
+
+    <div class="smart-plug-frame">
+      <canvas id="smart-plug-month" style="height: 300px; width: 800px;"></canvas>
+    </div>
+
+    <div class="overview-card-appliances">
+      <i class="fas fa-plug"></i>
+      <p>My appliances</p>
+    </div>
+  </div>
 <!--   <div id="smart-plug-month" style="height: 300px; width: 800px;"></div> -->
 </div>
 </div>

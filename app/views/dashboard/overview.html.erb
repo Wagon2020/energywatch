@@ -9,13 +9,13 @@
     <div class="overview-card">
       <i class="fas fa-euro-sign"></i>
       <p>Your last bill<br>
-      <strong>EUR 65.18</strong></p>
+      <strong>EUR 80.59</strong></p>
     </div>
 
     <div class="overview-card">
       <i class="fas fa-bolt"></i>
       <p>Usage last month<br>
-      <strong>3760 kWh</strong></p>
+      <strong>264 kWh</strong></p>
     </div>
 
     <div class="overview-card">
@@ -34,24 +34,23 @@
   <h1 class= "overview-header">My energy consumption</h1>
 
   <div class="overview-cards">
-
-    <div class="smart-plug-frame">
-      <canvas id="smart-plug-month" style="height: 300px; width: 800px;"></canvas>
-    </div>
-
+    <%= render 'shared/smart_plug_month' %>
     <div class="overview-card-appliances">
       <i class="fas fa-plug"></i>
       <p>My appliances</p>
     </div>
   </div>
 
-  <div class="smart-plug-frame">
+
+  <%= render 'shared/smart_plug_daily' %>
+
+</div>
+
+<!--   <div class="smart-plug-frame">
     <canvas id="smart-plug-daily" style="height: 300px; width: 800px;"></canvas>
-  </div>
+  </div> -->
 
 <!--   <div id="smart-plug-month" style="height: 300px; width: 800px;"></div> -->
-<%= render 'shared/smart_plug_month' %>
-<%= render 'shared/smart_plug_daily' %>
-</div>
+
 
 

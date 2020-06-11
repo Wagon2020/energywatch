@@ -4,8 +4,13 @@
 
   <div class="overview-cards">
     <div class="overview-card">
+      <p>Your energy provider<br>
+      <strong><%= current_user.utility_account.energy_provider.name %></strong></p>
+    </div>
+
+    <div class="overview-card">
       <i class="fas fa-euro-sign"></i>
-      <p>Your last bill<br>
+      <p>Last bill<br>
       <strong>EUR 80.59</strong></p>
     </div>
 
@@ -33,7 +38,7 @@
         <p><strong>My appliances</strong></p>
         <ul>
           <% @appliances.each do |appliance| %>
-          <li class="scroll-down" style="list-style: none"><%= appliance.appliance_type %></li>
+          <li class="scroll-down"><%= appliance.appliance_type %></li>
           <% end %>
         </ul>
       </div>

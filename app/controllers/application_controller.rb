@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
 
   def after_sign_in_path_for(resource)
     set_flash_message! :alert, :warn_pwned if resource.respond_to?(:pwned?) && resource.pwned?

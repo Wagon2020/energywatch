@@ -1,13 +1,13 @@
 const scroller = () => {
-  let navbar = document.querySelector('.home_nav');
+  let navbar = document.querySelector('.side-nav');
   if (navbar) {
-    window.addEventListener('scroll', (event) => {
-      const scrollValue = $(window).scrollTop() / (240)
-      navbar.style.background = `rgba(97, 71, 255, ${scrollValue})`;
-      navbar.style.boxShadow = `0 0 15px rgba(0,0,0,${Math.min(scrollValue / 5, 0.2)})`;
-      console.log(scrollValue);
+    document.querySelectorAll('.icon-nav').forEach(item => {
+      item.addEventListener('click', event => {
+        // window.scrollTo(0 , 0, { behavior: 'smooth' });
+        window.scrollTo({ top: 0, left: 100, behavior: 'smooth' });
+      });
     });
-  }
-}
+  };
+};
 
 export {scroller}

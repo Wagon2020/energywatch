@@ -36,7 +36,8 @@ const smartPlugDaily = () => {
                       onClick:  stefan },
             elements: { point:{ radius: 0 }},
             tooltips: { mode: 'index', intersect: false },
-            hover: { mode: 'nearest', intersect: true }
+            hover: { mode: 'nearest', intersect: true },
+            scales: { yAxes: [{ ticks: { suggestedMax: 2000 } }] }
           }
       });
   };
@@ -70,7 +71,8 @@ const smartPlugMonth = () => {
           options: {
             legend: { position: 'bottom',
                       onClick:  stefan },
-            elements: { point:{ radius: 3 }}
+            elements: { point:{ radius: 3 }},
+            scales: { yAxes: [{ ticks: { suggestedMax: 12000 } }] }
           }
       });
     buttonClick(myChart, line);
@@ -105,7 +107,8 @@ const householdMonth = () => {
           options: {
             legend: { position: 'bottom',
                       onClick:  stefan },
-            elements: { point:{ radius: 3 }}
+            elements: { point:{ radius: 3 }},
+            scales: { yAxes: [{ ticks: { beginAtZero: true, suggestedMax: 20, } }] }
           }
       });
   };

@@ -1,43 +1,40 @@
 <%= include_gon %>
-<div class="page-content">
-  <h1>Pages#data</h1>
-  <p>DATA TESTS</p>
-  <p>renewable - total: <%= @renewable_forecast %> </p>
-  <hr>
-  <p>solar forecast: <%= @solar_forecast %></p>
-  <hr>
-  <%= @load %>
-  <hr>
-  <p>household monthly: <%= @household %></p>
-  <p>Smart-today: <%= @smart_today %></p>
-  <p>Smart-yesterday: <%= @smart_yesterday %></p>
-  <hr>
-  <p>last API call: <%= @data_created_at %></p>
-  <%= @data %>
-  <hr>
-  <div id="chart-bar" style="height: 300px; width: 600px;"></div>
-  <hr>
-  <%= @donut %>
-  <div id="chart-donut" style="height: 300px;"></div>
-  <hr>
+<h1>Pages#data</h1>
+<p>DATA TESTS</p>
+<p>renewable - total: <%= @renewable_forecast %> </p>
+<hr>
+<p>solar forecast: <%= @solar_forecast %></p>
+<hr>
+<%= @load %>
+<hr>
+<p>household monthly: <%= @household %></p>
+<p>Smart-today: <%= @smart_today %></p>
+<p>Smart-yesterday: <%= @smart_yesterday %></p>
+<hr>
+<p>last API call: <%= @data_created_at %></p>
+<%= @data %>
+<hr>
+<div id="chart-bar" style="height: 300px; width: 600px;"></div>
+<hr>
+<%= @donut %>
+<div id="chart-donut" style="height: 300px;"></div>
+<hr>
 
-  <%= render 'forecast' %>
+<%= render 'forecast' %>
 
-  <%= @forecast_rec %>
-  <hr>
+<%= @forecast_rec %>
+<hr>
 
-  <%= render '/shared/smart_plug_month' %>
+<%= render '/shared/smart_plug_month' %>
 
-  <table>
-    <tr>Time: <%= "TODO: timestamp" %></tr>
-    <% @data.each do |type, amount|%>
-    <tr>
-      <td><%=  type %></td>
-      <td>
-        <%=  amount %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
-</div>
-
+<table>
+  <tr>Time: <%= "TODO: timestamp" %></tr>
+  <% @data.each do |type, amount|%>
+  <tr>
+    <td><%=  type %></td>
+    <td>
+      <%=  amount %>
+    </td>
+  </tr>
+  <% end %>
+</table>

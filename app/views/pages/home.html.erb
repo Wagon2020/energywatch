@@ -1,49 +1,42 @@
-<div class="page-content">
+<div class="banner-spacer"></div>
 
-  <div class="banner-spacer"></div>
+<div class="title-below-banner">
+  <h1>Ever wondered where your electricity comes from?</h1>
+</div>
 
-  <div class="title-below-banner">
-    <h1>Ever wondered where your electricity comes from?</h1>
-  </div>
+<div class="home-container">
 
-  <div class="home-container">
+  <div class="cards">
+    <div class="card home">
+      <h4>Why it matters</h4>
+      <p>The energy sector is the largest source of greenhouse gas emissions worldwide. This is due to the burning of fossil fuels for the production of electricity.</p>
 
-    <div class="cards">
-      <div class="card home">
-        <h4>Why it matters</h4>
-        <p>The energy sector is the largest source of greenhouse gas emissions worldwide. This is due to the burning of fossil fuels for the production of electricity.</p>
+      <p>By shifting electricity demand towards times when there is more renewable energy in the grid, YOU can actively help reduce the emissions from the energy sector.</p>
 
-        <p>By shifting electricity demand towards times when there is more renewable energy in the grid, YOU can actively help reduce the emissions from the energy sector.</p>
+      <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
 
-        <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
+      <% if !current_user.present? %>
+      <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
+      <% end %>
+    </div>
 
-        <% if !current_user.present? %>
-        <button class="btn btn-action"><%= link_to "Sign up", new_user_session_path %></button>
-        <% end %>
+    <div class="donut-frame">
+      <div class="background-card"></div>
+      <div class="donut">
+        <h3>Energy mix</h3>
+        <div class="overlay"></div>
+        <div id="chart-donut" style="height: 400px;"></div>
       </div>
-
-      <div class="donut-frame">
-        <div class="background-card"></div>
-        <div class="donut">
-          <h3>Energy mix</h3>
-          <div class="overlay"></div>
-          <div id="chart-donut" style="height: 400px;"></div>
-        </div>
-        <h4 class="renewable-share"><strong><%= @re %> %</strong><br>Renewable</h4>
-      </div>
-
+      <h4 class="renewable-share"><strong><%= @re %> %</strong><br>Renewable</h4>
     </div>
 
   </div>
-
-  <div class="recommendation">
-    <%= link_to details_path do %>
-    <p><strong>To find out more, click here.</strong></p>
-    <% end %>
-  </div>
-
 </div>
 
-
+<div class="recommendation">
+  <%= link_to details_path do %>
+  <p><strong>To find out more, click here.</strong></p>
+  <% end %>
+</div>
 
 <%= include_gon %>

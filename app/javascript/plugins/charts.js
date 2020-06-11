@@ -73,6 +73,7 @@ const smartPlugMonthTest = () => {
             elements: { point:{ radius: 3 }}
           }
       });
+    buttonClick(myChart, line);
   };
 }
 
@@ -147,8 +148,22 @@ const showCharts = () => {
   smartPlugMonthTest();
   // donut_test();
   smartPlugDaily();
+
 }
 
+const buttonClick = (chart, element) => {
+  element.onclick = function(evt) {
+  let activePoint = chart.getElementAtEvent(event);
+
+  // make sure click was on an actual point
+  if (activePoint.length > 0) {
+    let clickedDatasetIndex = activePoint[0]._datasetIndex;
+    let clickedElementindex = activePoint[0]._index;
+    console.log(clickedElementindex)
+    console.log(activePoint[0]._options)
+  }
+};
+}
 
 const stefan = () => {
   console.log("energywatch is awesome!")

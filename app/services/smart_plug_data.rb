@@ -42,6 +42,14 @@ class SmartPlugData
     data_hash(Date.today.to_s.delete('-').to_i)
   end
 
+  def self.last_30_days
+    number_of_days = 5
+    start_date = Date.today.to_s.delete('-').to_i
+    end_date = (Date.today - number_of_days.days).to_s.delete('-').to_i
+    result = SmartPlug.where(todays_date: end_date..start_date)
+    result
+  end
+
   private
 
   def self.data_hash(date)

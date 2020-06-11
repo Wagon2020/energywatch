@@ -49,13 +49,13 @@ const smartPlugMonth = () => {
   let data = []
   let labels = []
 
-  for (let [key, value] of Object.entries(gon.smart_plug_data)) {
-    data.push(value);
-    labels.push(key);
-  }
+  if (line){
+    for (let [key, value] of Object.entries(gon.smart_plug_data)) {
+      data.push(value);
+      labels.push(key);
+    }
   // console.log(labels)
   // console.log(data)
-  if (line){
     var myChart = new Chart(line, {
           type: 'line',
           data: {

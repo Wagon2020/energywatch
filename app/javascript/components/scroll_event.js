@@ -1,5 +1,6 @@
 const scroller = () => {
   let navbar = document.querySelector('.home_nav');
+  // const homepage = document.querySelector('.home-container');
   if (navbar) {
     window.addEventListener('scroll', (event) => {
       const scrollValue = $(window).scrollTop() / (240)

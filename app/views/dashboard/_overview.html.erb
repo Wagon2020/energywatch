@@ -33,7 +33,7 @@
         <p><strong>My appliances</strong></p>
         <ul>
           <% @appliances.each do |appliance| %>
-          <li style="list-style: none"><a href=""><%= appliance.appliance_type %></a></li>
+          <li class="scroll-down" style="list-style: none"><%= appliance.appliance_type %></li>
           <% end %>
         </ul>
       </div>

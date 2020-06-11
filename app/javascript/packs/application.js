@@ -33,6 +33,7 @@ import { showCharts } from '../plugins/charts';
 import { toggle_charts } from '../components/toggle_charts';
 import { move } from '../components/move_footer';
 import { top } from '../components/scroll_to_top';
+import { scrollToAppliance } from '../components/scroll_to_appliance';
 
 
 
@@ -44,6 +45,7 @@ import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  scrollToAppliance();
   scroller();
   toggle_charts();
   initSelect2();

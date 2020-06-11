@@ -1,45 +1,44 @@
+
 <%= include_gon %>
-<div class="page-content">
-  <div class="container">
-    <h1 style="margin: 50px 0px 20px 0px;" class="dark-grey">Electricity mix in real-time</h1>
+<div class="container">
+  <h1 style="margin: 50px 0px 20px 0px;" class="dark-grey">Electricity mix in real-time</h1>
 
-    <div class="now">
-      <div class="line-now"></div>
-      <div class="charts-details">
-        <div id="chart-bar" style="height: 300px; width: 500px;"></div>
-        <div id="chart-donut" style="height: 300px;"></div>
-      </div>
-      <div class="card">
-        <i class="far fa-lightbulb"></i>
-        <h2>Did you know?</h2>
-        <p><%= @recommendations %></p>
-      </div>
+  <div class="now">
+    <div class="line-now"></div>
+    <div class="charts-details">
+      <div id="chart-bar" style="height: 300px; width: 500px;"></div>
+      <div id="chart-donut" style="height: 300px;"></div>
     </div>
-
-
-    <h1 style="margin: 50px 0px 20px 0px;" class="dark-grey">Forecast</h1>
-
-    <div class="forecast">
-      <div class="line-forecast"></div>
-      <div class="forecast-cards">
-        <div class="forecast-rec">
-          <i class="fas fa-star"></i>
-          <p>Most renewable energy <br> available between<br><strong><%= @forecast_rec.first[0] %> and <%= @forecast_rec.to_a.last[0] %></strong></p>
-        </div>
-
-        <div class="forecast-max">
-          <i class="fas fa-seedling"></i>
-          <p>Highest share<br>of renewables<br>at <strong><%= @forecast_max[0] %></strong></p>
-        </div>
-
-        <div class="forecast-min">
-          <i class="fas fa-dizzy"></i>
-          <p>Lowest share <br>of renewables<br>at <strong><%= @forecast_min[0] %></strong></p>
-        </div>
-
-      </div>
-      <%= render 'forecast' %>
+    <div class="card">
+      <i class="far fa-lightbulb"></i>
+      <h2>Did you know?</h2>
+      <p><%= @recommendations %></p>
     </div>
-
   </div>
+
+
+  <h1 style="margin: 50px 0px 20px 0px;" class="dark-grey">Forecast</h1>
+
+  <div class="forecast">
+    <div class="line-forecast"></div>
+    <div class="forecast-cards">
+      <div class="forecast-rec">
+        <i class="fas fa-star"></i>
+        <p>Most renewable energy <br> available between<br><strong><%= @forecast_rec.first[0] %> and <%= @forecast_rec.to_a.last[0] %></strong></p>
+      </div>
+
+      <div class="forecast-max">
+        <i class="fas fa-seedling"></i>
+        <p>Highest share<br>of renewables<br>at <strong><%= @forecast_max[0] %></strong></p>
+      </div>
+
+      <div class="forecast-min">
+        <i class="fas fa-dizzy"></i>
+        <p>Lowest share <br>of renewables<br>at <strong><%= @forecast_min[0] %></strong></p>
+      </div>
+
+    </div>
+    <%= render 'forecast' %>
+  </div>
+
 </div>

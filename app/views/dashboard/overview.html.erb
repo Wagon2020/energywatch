@@ -31,14 +31,14 @@
   <h1 class= "overview-header">My energy consumption</h1>
 
   <div class="overview-cards">
-    <%= render 'shared/smart_plug_month' %>
+    <%= render 'shared/household_month' %>
 
     <div class="overview-card-appliances">
       <i class="fas fa-plug"></i>
       <div>
         <p><strong>My appliances</strong></p>
         <ul>
-          <li>Appliance 1</li>
+          <li>Appliance 1x</li>
           <li>Appliance 2</li>
           <li>Appliance 3</li>
         </ul>
@@ -47,7 +47,7 @@
 
   </div>
 
-
+  <%= render 'shared/smart_plug_month' %>
   <%= render 'shared/smart_plug_daily' %>
 
 

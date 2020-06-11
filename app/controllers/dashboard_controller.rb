@@ -6,8 +6,10 @@ class DashboardController < ApplicationController
     @utility_account = UtilityAccount.new
     @energy_providers = EnergyProvider.all
     @energy_provider = EnergyProvider.new
+    gon.household = SmartPlugData.household_monthly_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
     gon.smart_plug_daily = SmartPlugData.yesterday
+    @appliances = Appliance.where(user: current_user)
   end
 
   def overview

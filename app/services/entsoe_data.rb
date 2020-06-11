@@ -59,7 +59,7 @@ class EntsoeData
   end
 
   def self.created_at
-    EnergyMix.last.created_at
+    (EnergyMix.last.created_at + 2.hours).strftime("%d.%b - %k:%M")
   end
 
   def self.energy_types_array
@@ -103,6 +103,10 @@ class EntsoeData
 
   def self.forecast_max
     forecast_total.max_by { |_k, v| v }
+  end
+
+  def self.forecast_updated_at
+    (Forecast.last.updated_at + 2.hours).strftime("%d.%b - %k:%M")
   end
 
   private

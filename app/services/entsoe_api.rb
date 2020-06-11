@@ -27,9 +27,11 @@ class EntsoeApi
   end
 
   def forecast_renewable
+    date_start = Date.today.to_s.delete('-') + '2200' # returns "202006022200"
+    date_end = Date.tomorrow.to_s.delete('-') + '2200' # returns "202006022200"
     @doc_type = "A69"
     @process_type = "A01"
-    url_all = "#{@base_url}securityToken=#{@token}&documentType=#{@doc_type}&processType=#{@process_type}&in_Domain=#{@domain}&periodStart=#{@date_start}&periodEnd=#{@date_end}"
+    url_all = "#{@base_url}securityToken=#{@token}&documentType=#{@doc_type}&processType=#{@process_type}&in_Domain=#{@domain}&periodStart=#{date_start}&periodEnd=#{date_end}"
     url = open(url_all)
     data = Hash.from_xml(url)
     energy_array = data["GL_MarketDocument"]["TimeSeries"]

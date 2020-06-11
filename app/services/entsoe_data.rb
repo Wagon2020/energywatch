@@ -30,11 +30,11 @@ class EntsoeData
 
   def self.recommendations
     if renewable_share > 40
-      "The electricity mix is about as green as it gets! Now is the best time to use all that renewable power."
+      "The electricity mix is about as green as it gets. Now is the best time to use all that renewable power!"
     elsif renewable_share > 20
-      "It's not so bad, but you can be even greener!"
+      "The electricity mix is not so bad right now, but it is even greener at other times of the day! Check out our forecast below:"
     else
-      "Yuck, we've got a lot of coal in the mix now, better think twice!"
+      "There is a lot of coal in the electricity mix now - perhaps think about turning on your washing machine a bit later?"
     end
   end
 

@@ -37,7 +37,8 @@ const smartPlugDaily = () => {
             elements: { point:{ radius: 0 }},
             tooltips: { mode: 'index', intersect: false },
             hover: { mode: 'nearest', intersect: true },
-            scales: { yAxes: [{ ticks: { suggestedMax: 2000 } }] }
+            scales: { yAxes: [{ ticks: { suggestedMax: 2000 } }],
+                      xAxes: [{ ticks: { min: "00:00" } }] }
           }
       });
   };
@@ -84,13 +85,13 @@ const householdMonth = () => {
   let data = []
   let labels = []
 
-  for (let [key, value] of Object.entries(gon.household)) {
-    data.push(value);
-    labels.push(key);
-  }
-  // console.log(labels)
-  // console.log(data)
   if (line){
+    for (let [key, value] of Object.entries(gon.household)) {
+      data.push(value);
+      labels.push(key);
+    }
+    // console.log(labels)
+    // console.log(data)
     var myChart = new Chart(line, {
           type: 'line',
           data: {
@@ -145,7 +146,7 @@ const detailsBar = () => {
   if (bar){
     new Chartkick.BarChart("chart-bar",
                             gon.chart_data,
-                            {colors: ["#6147FF"], suffix: " MW"})
+                            { colors: ["#00ced1", "#F34A69", "#F34A69", "#F34A69", "#00ced1", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69", "#F34A69"], suffix: " MW" } )
 
   };
 }
@@ -155,9 +156,9 @@ const renewableForecast = () => {
   if (re_forecast){
     new Chartkick.LineChart("chart-re-forecast",
                             gon.renewable_forecast,
-                            {colors: ["#00ced1"],
+                            { colors: ["#00ced1"],
                             legend: "bottom", ytitle: "MegaWatt",
-                            label: "all renewables", points: false} )
+                            label: "all renewables", points: false } )
   };
 
   let re_forecast_breakdown = document.querySelector('#chart-forecast');
@@ -177,7 +178,7 @@ const donut = () => {
   };
 }
 
-const showCharts = () => {["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"]
+const showCharts = () => {
 
   donut();
   detailsBar();

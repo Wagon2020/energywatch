@@ -6,10 +6,7 @@ class PagesController < ApplicationController
     @donut = EntsoeData.donut
     @sp = SmartPlugData.smart_plug_monthly_array
     gon.donut_data = EntsoeData.donut_array
-    gon.chart_data = EntsoeData.energy_types_array
-    gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
     @re = EntsoeData.renewable_share
-    @recommendations = EntsoeData.recommendations
   end
 
   def details
@@ -18,6 +15,7 @@ class PagesController < ApplicationController
     @forecast_rec = EntsoeData.forecast_recommendation # returns string with range of time for best re
     @forecast_max = EntsoeData.forecast_max
     @forecast_min = EntsoeData.forecast_min
+    @recommendations = EntsoeData.recommendations
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
     gon.smart_plug_data = SmartPlugData.smart_plug_monthly_array
@@ -34,6 +32,7 @@ class PagesController < ApplicationController
     @donut = EntsoeData.donut
     @renewable_forecast = EntsoeData.forecast_total
     @solar_forecast = EntsoeData.forecast_solar # returns Hash of the latest renewable forecast (summed up)
+    @household = SmartPlugData.household_monthly_array
 
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array
@@ -44,9 +43,9 @@ class PagesController < ApplicationController
 
   def download_pdf
     send_file(
-    "#{Rails.root}/app/assets/images/fluter70_klima_poster.pdf",
-    filename: "fluter70_klima_poster.pdf",
-    type: "application/pdf"
+      "#{Rails.root}/app/assets/images/fluter70_klima_poster.pdf",
+      filename: "fluter70_klima_poster.pdf",
+      type: "application/pdf"
     )
     # redirect_to root_path
   end

@@ -50,6 +50,42 @@ class SmartPlugData
     result
   end
 
+  def self.household_monthly_array
+    {
+      'may 12' => 12,
+      'may 13' => 9,
+      'may 14' => 10,
+      'may 15' => 8,
+      'may 16' => 9,
+      'may 17' => 7,
+      'may 18' => 11,
+      'may 19' => 11,
+      'may 20' => 11,
+      'may 21' => 8,
+      'may 22' => 9,
+      'may 23' => 14,
+      'may 24' => 9,
+      'may 25' => 8,
+      'may 26' => 8,
+      'may 27' => 8,
+      'may 28' => 13,
+      'may 29' => 9,
+      'may 30' => 9,
+      'may 31' => 11,
+      'june 01' => 9,
+      'june 02' => 10,
+      'june 03' => 12,
+      'june 04' => 9,
+      'june 05' => 12,
+      'june 06' => 9,
+      'june 07' => 12,
+      'june 08' => 9,
+      'june 09' => 10,
+      'june 10' => 7,
+      'june 11' => 9
+    }
+  end
+
   private
 
   def self.data_hash(date)

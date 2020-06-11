@@ -32,7 +32,7 @@ import { scroller } from '../components/scroll_event';
 import { showCharts } from '../plugins/charts';
 import { toggle_charts } from '../components/toggle_charts';
 import { move } from '../components/move_footer';
-import { top } from '../components/scroll_top';
+import { top } from '../components/scroll_to_top';
 
 
 

@@ -1,9 +1,9 @@
 .recommendation {
   margin: 0 auto;
-  width: 500px;
+  width: 300px;
   height: auto;
   text-align: center;
-  padding: 10px 15px;
+  padding: 15px 15px;
   border-radius: 60px;
   // border: 5px dashed $light-green;
   margin-bottom: 80px;
@@ -11,7 +11,9 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   p {
     margin: 0px;
-    color: $ew-purple;
+    color: white;
+    font-size: 18px;
+
   }
 }
 

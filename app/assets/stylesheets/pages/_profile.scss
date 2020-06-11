@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .flexbox {
   display: flex;
   justify-content: space-between;
@@ -54,3 +58,4 @@ li {
 .breath {
   padding: 0 0 0 10px;
 }
+

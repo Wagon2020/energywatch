@@ -3,23 +3,23 @@ require("chart.js")
 import Chart from 'chart.js';
 
 
-const smartPlugMonth = () => {
-  const line = document.querySelector('#chart-line');
-  if (line){
-    new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
-  };
-}
+// const smartPlugMonth = () => {
+//   const line = document.querySelector('#chart-line');
+//   if (line){
+//     new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
+//   };
+// }
 
 const smartPlugDaily = () => {
   const line = document.querySelector('#smart-plug-daily');
   let data = []
   let labels = []
-
-  for (let [key, value] of Object.entries(gon.smart_plug_daily)) {
-    data.push(value);
-    labels.push(key);
-  }
   if (line){
+
+    for (let [key, value] of Object.entries(gon.smart_plug_daily)) {
+      data.push(value);
+      labels.push(key);
+    }
         var myChart = new Chart(line, {
           type: 'line',
           data: {
@@ -36,13 +36,14 @@ const smartPlugDaily = () => {
                       onClick:  stefan },
             elements: { point:{ radius: 0 }},
             tooltips: { mode: 'index', intersect: false },
-            hover: { mode: 'nearest', intersect: true }
+            hover: { mode: 'nearest', intersect: true },
+            scales: { yAxes: [{ ticks: { suggestedMax: 2000 } }] }
           }
       });
   };
 }
 
-const smartPlugMonthTest = () => {
+const smartPlugMonth = () => {
   const line = document.querySelector('#smart-plug-month');
   let data = []
   let labels = []
@@ -70,10 +71,46 @@ const smartPlugMonthTest = () => {
           options: {
             legend: { position: 'bottom',
                       onClick:  stefan },
-            elements: { point:{ radius: 3 }}
+            elements: { point:{ radius: 3 }},
+            scales: { yAxes: [{ ticks: { suggestedMax: 12000 } }] }
           }
       });
     buttonClick(myChart, line);
+  };
+}
+
+const householdMonth = () => {
+  const line = document.querySelector('#household-month');
+  let data = []
+  let labels = []
+
+  for (let [key, value] of Object.entries(gon.household)) {
+    data.push(value);
+    labels.push(key);
+  }
+  // console.log(labels)
+  // console.log(data)
+  if (line){
+    var myChart = new Chart(line, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  data: data,
+                  label: 'KW/h',
+                  borderColor: ["#1fe5bd"],
+                  backgroundColor: ["#1fe5bd"],
+                  pointBackgroundColor: 'rgba(31, 229, 189, 1)',
+                  fill: false
+              }],
+          },
+          options: {
+            legend: { position: 'bottom',
+                      onClick:  stefan },
+            elements: { point:{ radius: 3 }},
+            scales: { yAxes: [{ ticks: { beginAtZero: true, suggestedMax: 20, } }] }
+          }
+      });
   };
 }
 
@@ -118,7 +155,7 @@ const renewableForecast = () => {
   if (re_forecast){
     new Chartkick.LineChart("chart-re-forecast",
                             gon.renewable_forecast,
-                            {colors: ["#6147FF"],
+                            {colors: ["#00ced1"],
                             legend: "bottom", ytitle: "MegaWatt",
                             label: "all renewables", points: false} )
   };
@@ -128,7 +165,7 @@ const renewableForecast = () => {
     new Chartkick.ColumnChart("chart-forecast",
                               gon.re_breakdown_data,
                               {stacked: true,
-                              colors: ["#6147FF", "#9484ff", "#d5ceff"],
+                              colors: ["#00ced1", "#6fd6d6", "#a1eaea"],
                               legend: "bottom", ytitle: "MegaWatt"})
   };
 }
@@ -136,18 +173,19 @@ const renewableForecast = () => {
 const donut = () => {
   const donut = document.querySelector('#chart-donut');
   if (donut) {
-    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"], legend: "bottom", donut: true})
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#00ced1", "#FD3AA9", "#F5D671", "#eeef20"], legend: "bottom", donut: true})
   };
 }
 
-const showCharts = () => {
+const showCharts = () => {["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"]
 
   donut();
   detailsBar();
   renewableForecast();
-  smartPlugMonthTest();
+  smartPlugMonth();
   // donut_test();
   smartPlugDaily();
+  householdMonth();
 
 }
 

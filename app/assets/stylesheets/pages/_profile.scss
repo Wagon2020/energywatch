@@ -7,6 +7,10 @@ html {
   justify-content: space-between;
   padding: 16px 16px;
   margin: 20px 10px;
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 .icon-nav {
@@ -30,8 +34,8 @@ li {
 }
 
 .profile-card {
-  border: 1px solid $ew-midpurple;
-  border-radius: 5px;
+  border: 1px dotted $ew-midpurple;
+  border-radius: 20px;
   background-color: $ew-lightpurple;
   padding: 8px 8px;
   margin: 10px 10px;
@@ -55,6 +59,14 @@ li {
 
 .profile-card-info {
   margin-top: 12px;
+  a {
+    color: $ew-purple;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  a:hover {
+    color: $ew-lightgrey;
+  }
 }
 
 .btn-outline-primary {
@@ -75,4 +87,15 @@ li {
 .contrast-font {
   color: black;
 }
+
+.profile-info-margin {
+  margin-top: 55px;
+}
+
+.purple-bold {
+  color: $ew-purple;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
 

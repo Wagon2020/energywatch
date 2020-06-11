@@ -118,7 +118,7 @@ const renewableForecast = () => {
   if (re_forecast){
     new Chartkick.LineChart("chart-re-forecast",
                             gon.renewable_forecast,
-                            {colors: ["#6147FF"],
+                            {colors: ["#00ced1"],
                             legend: "bottom", ytitle: "MegaWatt",
                             label: "all renewables", points: false} )
   };
@@ -128,7 +128,7 @@ const renewableForecast = () => {
     new Chartkick.ColumnChart("chart-forecast",
                               gon.re_breakdown_data,
                               {stacked: true,
-                              colors: ["#6147FF", "#9484ff", "#d5ceff"],
+                              colors: ["#00ced1", "#6fd6d6", "#a1eaea"],
                               legend: "bottom", ytitle: "MegaWatt"})
   };
 }
@@ -136,11 +136,11 @@ const renewableForecast = () => {
 const donut = () => {
   const donut = document.querySelector('#chart-donut');
   if (donut) {
-    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"], legend: "bottom", donut: true})
+    new Chartkick.PieChart("chart-donut", gon.donut_data, {colors: ["#00ced1", "#FD3AA9", "#F5D671", "#eeef20"], legend: "bottom", donut: true})
   };
 }
 
-const showCharts = () => {
+const showCharts = () => {["#6DE676", "#F34A69", "#F5D671", "#FFFF3F"]
 
   donut();
   detailsBar();

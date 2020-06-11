@@ -5,11 +5,13 @@
 .now {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .forecast {
   display: flex;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .forecast-cards {
@@ -58,13 +60,13 @@
   position: relative;
   height: 120px;
   width: 350px;
-  margin: 10px 0px;
+  margin: 19px 0px;
   padding: 10px 20px;
-  background: #c7edc9;
+  background: #a1eaea;
   border-radius: 20px;
 
   i {
-    background: #6DE676;
+    background: $green;
   }
 
 
@@ -79,6 +81,6 @@
   border-radius: 20px;
 
   i {
-    background: #FF7F24;
+    background: $orange;
   }
 }

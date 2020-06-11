@@ -14,12 +14,12 @@ const smartPlugDaily = () => {
   const line = document.querySelector('#smart-plug-daily');
   let data = []
   let labels = []
-
-  for (let [key, value] of Object.entries(gon.smart_plug_daily)) {
-    data.push(value);
-    labels.push(key);
-  }
   if (line){
+
+    for (let [key, value] of Object.entries(gon.smart_plug_daily)) {
+      data.push(value);
+      labels.push(key);
+    }
         var myChart = new Chart(line, {
           type: 'line',
           data: {

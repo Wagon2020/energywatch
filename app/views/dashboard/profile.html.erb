@@ -33,8 +33,8 @@
             <%= link_to appliance_path(appliance), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt delete-position"></i>
             <% end %>
             <div class="profile-card-info">
-              <ul>
-                <li class="profile-info-margin"><%= link_to appliance.appliance_type, overview_path %></li>
+              <ul class="profile-info-margin">
+                <li><%= link_to appliance.appliance_type, profile_path %></li>
                 <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
               </ul>
             </div>
@@ -62,8 +62,8 @@
             <%= link_to smart_home_system_path(smart_home_system), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt delete-position"></i>
             <% end %>
             <div class="profile-card-info">
-             <ul>
-               <li class="profile-info-margin purple-bold"><%= smart_home_system.system_type %></li>
+             <ul class="profile-info-margin">
+               <li class="purple-bold"><%= smart_home_system.system_type %></li>
              </ul>
            </div>
          </div>
@@ -89,8 +89,8 @@
             <%= link_to utility_account_path(current_user.utility_account), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt delete-position"></i>
             <% end %>
             <div class="profile-card-info">
-             <ul>
-               <li class="profile-info-margin purple-bold">Energy Provider: <%= current_user.utility_account.energy_provider.name%></li>
+             <ul class="profile-info-margin">
+               <li class="purple-bold">Energy Provider: <%= current_user.utility_account.energy_provider.name%></li>
                <li>Meter Nr.: <%= current_user.utility_account.meter_ref %></li>
              </ul>
            </div>

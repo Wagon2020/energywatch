@@ -46,13 +46,13 @@ li {
 
   .delete-position {
     position: absolute;
-    top: 20px;
+    bottom: 31px;
     right: 20px;
   }
 
   .edit-position {
     position: absolute;
-    top: 10px;
+    bottom: 20px;
     right: 47px;
   }
 }
@@ -89,7 +89,8 @@ li {
 }
 
 .profile-info-margin {
-  margin-top: 55px;
+  margin-top: 20px;
+  margin-bottom: 55px;
 }
 
 .purple-bold {

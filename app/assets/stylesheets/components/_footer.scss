@@ -1,6 +1,7 @@
 .footer {
   position: absolute;
-  bottom: -80;
+  // bottom: -80px;
+  left: 0px;
   width: 100vw;
   background: $ew-purple;
   display: flex;
@@ -28,4 +29,8 @@
 }
 .footer .fa-heart {
   color: white;
+}
+
+.move_footer{
+  left: -100px;
 }

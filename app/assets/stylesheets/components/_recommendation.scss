@@ -3,17 +3,21 @@
   width: 500px;
   height: auto;
   text-align: center;
-  padding: 10px 30px;
-  border-radius: 15px;
-  border: 5px dashed $light-green;
+  padding: 10px 15px;
+  border-radius: 60px;
+  // border: 5px dashed $light-green;
   margin-bottom: 80px;
-  color: #575e5c;
+  background: $ew-midpurple;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   p {
     margin: 0px;
+    color: $ew-purple;
   }
 }
 
 .recommendation:hover {
-  background: $light-green;
+  background: $ew-purple;
+  p {
+    color: white;
+  }
 }

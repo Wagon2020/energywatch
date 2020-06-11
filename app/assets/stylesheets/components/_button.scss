@@ -3,7 +3,7 @@
   padding: 16px 32px;
   border-radius: 4px;
   font-weight: bold;
-  background: $ew-midpurple;
+  background-color: $ew-midpurple;
   transition: background 0.2s ease;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -15,7 +15,8 @@
 }
 
 .btn-action {
-  background: #FB1E7F;
+  background: $ew-midpurple;
+  color: white;
   width: 100px;
   border-radius: 20px;
 }

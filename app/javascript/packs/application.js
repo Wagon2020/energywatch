@@ -31,6 +31,7 @@ import { scroller } from '../components/scroll_event';
 // import { toggle_charts } from '../components/toggle_button';
 import { showCharts } from '../plugins/charts';
 import { toggle_charts } from '../components/toggle_charts';
+import { move } from '../components/move_navbar';
 
 
 
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   toggle_charts();
   initSelect2();
   showCharts();
+  move()
 
   // let donut = document.querySelector('#chart-donut');
   // if (donut) {

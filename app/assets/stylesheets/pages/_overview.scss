@@ -72,17 +72,19 @@
 
 }
 
-.side-container {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-}
-
 .side-nav {
   width: 100px;
+  position: fixed;
+  // position: -webkit-sticky; /* Safari */
+  // position: sticky;
+  top: 77;
+  height: calc(100vh - 77px);
 }
 
 .side-display {
-  flex-grow: 1;
+  width: calc(100vw - 100px);
+  min-height: calc(100vh - 77px);
+  position: relative;
+  right: -100px;
 }
 

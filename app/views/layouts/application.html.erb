@@ -19,11 +19,13 @@
       <%= render 'shared/navbar', style_class: "" %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <!-- <div class="page-content"> -->
-
-    <%= yield %>
-
-    <!-- </div> -->
+    <% if current_page?(profile_path) %>
+     <%= yield %>
+    <% else %>
+      <div class="page-content">
+        <%= yield %>
+      </div>
+    <% end %>
     <div class="footer" id="footer">
         <%= render 'shared/footer' %>
     </div>

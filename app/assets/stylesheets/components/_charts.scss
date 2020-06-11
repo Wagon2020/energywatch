@@ -9,14 +9,15 @@
 }
 
 .toggle-details {
-  z-index: 2;
+  z-index: 1.9;
   position: absolute;
   padding: 0;
   right: 24px;
   top: 24px;
   width: 60px;
   height: 24px;
-  background-color: #FB1E7F;
+  background-color: $ew-midpurple;
+
   font-size: 12px;
 }
 

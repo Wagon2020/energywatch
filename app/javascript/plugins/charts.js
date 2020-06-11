@@ -3,12 +3,12 @@ require("chart.js")
 import Chart from 'chart.js';
 
 
-const smartPlugMonth = () => {
-  const line = document.querySelector('#chart-line');
-  if (line){
-    new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
-  };
-}
+// const smartPlugMonth = () => {
+//   const line = document.querySelector('#chart-line');
+//   if (line){
+//     new Chartkick.LineChart("chart-line", gon.smart_plug_data, {colors: ["#1fe5bd"]})
+//   };
+// }
 
 const smartPlugDaily = () => {
   const line = document.querySelector('#smart-plug-daily');
@@ -42,7 +42,7 @@ const smartPlugDaily = () => {
   };
 }
 
-const smartPlugMonthTest = () => {
+const smartPlugMonth = () => {
   const line = document.querySelector('#smart-plug-month');
   let data = []
   let labels = []
@@ -74,6 +74,40 @@ const smartPlugMonthTest = () => {
           }
       });
     buttonClick(myChart, line);
+  };
+}
+
+const householdMonth = () => {
+  const line = document.querySelector('#household-month');
+  let data = []
+  let labels = []
+
+  for (let [key, value] of Object.entries(gon.household)) {
+    data.push(value);
+    labels.push(key);
+  }
+  // console.log(labels)
+  // console.log(data)
+  if (line){
+    var myChart = new Chart(line, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  data: data,
+                  label: 'KW/h',
+                  borderColor: ["#1fe5bd"],
+                  backgroundColor: ["#1fe5bd"],
+                  pointBackgroundColor: 'rgba(31, 229, 189, 1)',
+                  fill: false
+              }],
+          },
+          options: {
+            legend: { position: 'bottom',
+                      onClick:  stefan },
+            elements: { point:{ radius: 3 }}
+          }
+      });
   };
 }
 
@@ -145,9 +179,10 @@ const showCharts = () => {
   donut();
   detailsBar();
   renewableForecast();
-  smartPlugMonthTest();
+  smartPlugMonth();
   // donut_test();
   smartPlugDaily();
+  householdMonth();
 
 }
 

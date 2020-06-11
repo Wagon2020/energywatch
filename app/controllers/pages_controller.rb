@@ -34,6 +34,7 @@ class PagesController < ApplicationController
     @donut = EntsoeData.donut
     @renewable_forecast = EntsoeData.forecast_total
     @solar_forecast = EntsoeData.forecast_solar # returns Hash of the latest renewable forecast (summed up)
+    @household = SmartPlugData.household_monthly_array
 
     gon.donut_data = EntsoeData.donut_array
     gon.chart_data = EntsoeData.energy_types_array

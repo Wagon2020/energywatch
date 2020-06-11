@@ -23,9 +23,8 @@
       </div>
       <hr>
       <% if current_user.appliances.any? %>
+        <h7 style="margin-left: 28px;">Your Appliances: </h7>
       <div class="flexbox">
-        <h7>Your Appliances: </h7>
-        <br>
         <div class="container">
           <% current_user.appliances.each do |appliance| %>
           <div class="profile-card">
@@ -35,7 +34,7 @@
             <% end %>
             <div class="profile-card-info">
               <ul>
-                <li class="contrast-font"><%= link_to appliance.appliance_type, overview_path %></li>
+                <li class="profile-info-margin"><%= link_to appliance.appliance_type, overview_path %></li>
                 <li>Energy Performance Rating: <%= appliance.energy_performance %></li>
               </ul>
             </div>
@@ -53,9 +52,8 @@
       </div>
       <hr>
       <% if current_user.smart_home_systems.any? %>
+        <h7 style="margin-left: 28px;">Your Smart Home Systems: </h7>
       <div class="flexbox">
-        <h7>Your Smart Home Systems: </h7>
-        <br>
         <div class="container">
           <% current_user.smart_home_systems.each do |smart_home_system| %>
           <div class="profile-card">
@@ -65,7 +63,7 @@
             <% end %>
             <div class="profile-card-info">
              <ul>
-               <li><%= smart_home_system.system_type %></li>
+               <li class="profile-info-margin purple-bold"><%= smart_home_system.system_type %></li>
              </ul>
            </div>
          </div>
@@ -82,9 +80,8 @@
       </div>
       <hr>
       <% unless current_user.utility_account.nil? %>
+        <h7 style="margin-left: 28px;">Your Utility Account: </h7>
       <div class="flexbox">
-        <h7>Your Utility Account: </h7>
-        <br>
         <div class="container">
           <div class="profile-card">
             <button type="button" class="btn btn-primary edit-position" data-toggle="modal" data-target="#editutilityAccModal" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>
@@ -93,8 +90,8 @@
             <% end %>
             <div class="profile-card-info">
              <ul>
-               <li>Energy Provider: <%= current_user.utility_account.energy_provider.name%></li>
-               <li>Meter Number: <%= current_user.utility_account.meter_ref %></li>
+               <li class="profile-info-margin purple-bold">Energy Provider: <%= current_user.utility_account.energy_provider.name%></li>
+               <li>Meter Nr.: <%= current_user.utility_account.meter_ref %></li>
              </ul>
            </div>
          </div>

@@ -5,7 +5,11 @@
   <div class="overview-cards">
     <div class="overview-card">
       <p>Your energy provider<br>
-      <strong><%= current_user.utility_account.energy_provider.name %></strong></p>
+        <% if current_user.utility_account.nil? %>
+        <strong>add x</strong>
+        <% else %>
+          <strong><%= current_user.utility_account.energy_provider.name %></strong></p>
+        <% end %>
     </div>
 
     <div class="overview-card">

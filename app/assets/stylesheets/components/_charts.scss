@@ -55,4 +55,18 @@
   border: 5px solid $ew-lightgrey;
 }
 
+.bar-chart-updated-at {
+  position: absolute;
+  font-size: 0.6em;
+  right: 260px;
+  bottom: -36px;
+}
+
+.forecast-updated-at {
+  position: absolute;
+  font-size: 0.6em;
+  right: 8px;
+  bottom: -40px;
+}
+
 

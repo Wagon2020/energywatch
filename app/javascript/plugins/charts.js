@@ -157,7 +157,7 @@ const renewableForecast = () => {
     new Chartkick.LineChart("chart-re-forecast",
                             gon.renewable_forecast,
                             { colors: ["#00ced1"],
-                            legend: "bottom", ytitle: "MegaWatt",
+                            legend: "bottom", ytitle: "production in MW",
                             label: "all renewables", points: false } )
   };
 

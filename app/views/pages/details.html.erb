@@ -7,7 +7,12 @@
     <div class="line-now"></div>
     <div class="charts-details">
       <div id="chart-bar" style="height: 300px; width: 500px;"></div>
-      <div id="chart-donut" style="height: 300px;"></div>
+      <div class="donut-container">
+        <h4 class="renewable-share-details"><strong><%= @re %> %</strong><br>Renewable</h4>
+        <div id="chart-donut" style="height: 300px;"></div>
+      </div>
+
+
       <div class="bar-chart-updated-at"><p>updated: <%= @data_created_at %></p></div>
     </div>
     <div class="card">

@@ -3,6 +3,10 @@
   width: 500px;
 }
 
+.donut-container {
+  position: relative;
+}
+
 .donut {
   width: 400px;
   position: absolute;
@@ -40,6 +44,16 @@
   text-align: center;
   color: #575e5c;
   z-index: 1.1;
+}
+
+.renewable-share-details {
+  position: absolute;
+  top: 98px;
+  left: 104px;
+  font-size: 20px;
+  text-align: center;
+  color: #575e5c;
+  z-index: 2;
 }
 
 .overlay {

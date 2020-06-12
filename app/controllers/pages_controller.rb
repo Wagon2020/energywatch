@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @data = EntsoeData.energy_types
     @data_created_at = EntsoeData.created_at
     @donut = EntsoeData.donut
+    @re = EntsoeData.renewable_share
     @forecast_rec = EntsoeData.forecast_recommendation # returns string with range of time for best re
     @forecast_max = EntsoeData.forecast_max
     @forecast_min = EntsoeData.forecast_min

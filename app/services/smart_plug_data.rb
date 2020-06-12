@@ -30,7 +30,9 @@ class SmartPlugData
       'june 06' => 1062,
       'june 07' => 1341,
       'june 08' => 931,
-      'june 09' => 861
+      'june 09' => 861,
+      'june 10' => 1450,
+      'june 11' => 1532,
     }
   end
 

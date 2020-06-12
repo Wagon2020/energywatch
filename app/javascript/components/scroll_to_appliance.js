@@ -3,7 +3,7 @@ const scrollToAppliance = () => {
   if (btn) {
     btn.addEventListener('click', event => {
         // window.scrollTo(0 , 0, { behavior: 'smooth' });
-        window.scrollTo({ top: 700, behavior: 'smooth' });
+        window.scrollTo({ top: 660, behavior: 'smooth' });
       });
   }
 

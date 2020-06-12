@@ -6,7 +6,7 @@
     <div class="overview-card">
       <p>Your energy provider<br>
         <% if current_user.utility_account.nil? %>
-        <strong>add x</strong>
+        <strong>+ add account</strong>
         <% else %>
           <strong><%= current_user.utility_account.energy_provider.name %></strong></p>
         <% end %>
@@ -50,12 +50,18 @@
 
   </div>
 
-  <h1 class= "overview-header">My coffee machine - monthly overview</h1>
-  <%= render 'shared/smart_plug_month' %>
-  <br>
-  <h1 class= "overview-header">My coffee machine - today's overview</h1>
-  <%= render 'shared/smart_plug_daily' %>
-
+  <hr>
+  <h1 class= "overview-header">My coffee machine</h1>
+  <div class="overview-cards">
+    <div>
+      <h5>Monthly overview</h5>
+      <%= render 'shared/smart_plug_month' %>
+    </div>
+    <div>
+      <h5>Today's overview</h5>
+      <%= render 'shared/smart_plug_daily' %>
+    </div>
+  </div>
 </div>
 
 <!--   <div class="smart-plug-frame">

@@ -72,6 +72,8 @@ const smartPlugMonth = () => {
           options: {
             legend: { position: 'bottom',
                       onClick:  stefan },
+            tooltips: { mode: 'index', intersect: false },
+            hover: { mode: 'nearest', intersect: true },
             elements: { point:{ radius: 3 }},
             scales: { yAxes: [{ ticks: { suggestedMax: 12000 } }] }
           }
@@ -109,6 +111,8 @@ const householdMonth = () => {
             legend: { position: 'bottom',
                       onClick:  stefan },
             elements: { point:{ radius: 3 }},
+            tooltips: { mode: 'index', intersect: false },
+            hover: { mode: 'nearest', intersect: true },
             scales: { yAxes: [{ ticks: { beginAtZero: true, suggestedMax: 20, } }] }
           }
       });

@@ -1,6 +1,7 @@
 .donut-frame {
   position: relative;
   width: 500px;
+  margin-top: 30px;
 }
 
 .donut-container {
@@ -10,10 +11,10 @@
 .donut {
   width: 400px;
   position: absolute;
-  top: 25px;
+  top: 19px;
   right: 38px;
   background-color: white;
-  padding: 10px 0px;
+  padding: 10px 0 25px 0;
   border-radius: 20px;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 
@@ -21,7 +22,7 @@
     text-align: center;
     font-size: 25px;
     color: grey;
-    margin: 20px 0px 0px 0px;
+    margin: 15px 0px 15px 0px;
   }
 }
 
@@ -39,8 +40,8 @@
 
 .renewable-share {
   position: absolute;
-  top: 232px;
-  left: 202px;
+  top: 240px;
+  left: 205px;
   text-align: center;
   color: #575e5c;
   z-index: 1.1;

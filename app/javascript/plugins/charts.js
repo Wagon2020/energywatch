@@ -167,7 +167,7 @@ const renewableForecast = () => {
                               gon.re_breakdown_data,
                               {stacked: true,
                               colors: ["#00ced1", "#6fd6d6", "#a1eaea"],
-                              legend: "bottom", ytitle: "MegaWatt"})
+                              legend: "bottom", ytitle: "production in MW"})
   };
 }
 

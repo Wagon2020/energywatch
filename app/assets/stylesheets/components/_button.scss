@@ -29,9 +29,8 @@
   background-color: none;
   transition: background 0.2s ease;
   box-shadow: 0 0 15px rgba(0,0,0,0.18);
-  max-width: 127px;
+  max-width: 130px;
   text-align: center;
-  height: 48px;
 }
 
 .bannana:hover {
@@ -45,22 +44,18 @@
   width: 300px;
   height: auto;
   text-align: center;
-  padding: 15px 15px;
+  padding: 16px 24px;
   border-radius: 60px;
   margin-bottom: 80px;
   background: $ew-midpurple;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  p {
-    margin: 0px;
-    color: white;
-    font-size: 18px;
-
-  }
+  margin: 0px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .recommendation:hover {
   background: $ew-purple;
-  p {
     color: white;
-  }
 }

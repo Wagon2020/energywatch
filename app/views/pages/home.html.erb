@@ -15,11 +15,7 @@
 
       <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
       <% if !current_user.present? %>
-        <%= link_to new_user_session_path do %>
-          <div class="bannana">
-            <p>Sign up</p>
-          </div>
-        <% end %>
+       <%= link_to "Sign Up", new_user_session_path, class: "bannana"  %>
       <% end %>
     </div>
 
@@ -36,10 +32,8 @@
   </div>
 </div>
 
-<%= link_to details_path do %>
-  <div class="recommendation">
-    <p><strong>To find out more, click here.</strong></p>
-  </div>
-<% end %>
+<div class="link_bottom">
+  <%= link_to "To find out more, click here.", details_path, class: "recommendation"  %>
+</div>
 
 <%= include_gon %>

@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  h5 {
+    color: $ew-darkgrey;
+    border-left: dotted 5px #D5CFFE;
+    padding-left: 15px;
+  }
 }
 
 .overview-card {

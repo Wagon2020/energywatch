@@ -1,9 +1,12 @@
-// .full_opacity {
-//   opacity: 1;
-// }
 .btn-outline-primary {
   padding: 8px 8px;
   margin-bottom: 15px;
+  margin-left:75px;
   border-radius: 15px;
   opacity: 70%;
+  width: 100px;
+  color: $ew-purple;
+   :hover {
+    color: white !important;
+   }
 }

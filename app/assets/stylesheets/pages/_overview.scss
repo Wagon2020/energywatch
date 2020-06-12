@@ -71,6 +71,9 @@
     li {
       list-style-type: disc;
     }
+    li:hover {
+      color: $ew-purple;
+    }
   }
 
 }

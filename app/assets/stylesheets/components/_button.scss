@@ -20,3 +20,45 @@
   width: 100px;
   border-radius: 20px;
 }
+
+.bannana {
+  border: 1px solid $ew-midpurple;
+  color: $ew-midpurple;
+  padding: 16px 32px;
+  border-radius: 25px;
+  background-color: none;
+  transition: background 0.2s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.18);
+  max-width: 127px;
+}
+
+.bannana:hover {
+  background: $ew-lightpurple;
+  color: white;
+  text-decoration: none;
+}
+
+.recommendation {
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  padding: 15px 15px;
+  border-radius: 60px;
+  margin-bottom: 80px;
+  background: $ew-midpurple;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  p {
+    margin: 0px;
+    color: white;
+    font-size: 18px;
+
+  }
+}
+
+.recommendation:hover {
+  background: $ew-purple;
+  p {
+    color: white;
+  }
+}

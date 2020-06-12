@@ -24,12 +24,14 @@
 .bannana {
   border: 1px solid $ew-midpurple;
   color: $ew-midpurple;
-  padding: 16px 32px;
+  padding: 8px 32px;
   border-radius: 25px;
   background-color: none;
   transition: background 0.2s ease;
   box-shadow: 0 0 15px rgba(0,0,0,0.18);
   max-width: 127px;
+  text-align: center;
+  height: 48px;
 }
 
 .bannana:hover {

@@ -14,11 +14,12 @@
       <p>By shifting electricity demand towards times when there is more renewable energy in the grid, YOU can actively help reduce the emissions from the energy sector.</p>
 
       <p>Energywatch is here to inform you of the energy mix in real-time and provide you with recommendations.</p>
-
       <% if !current_user.present? %>
-      <%= link_to new_user_session_path do %>
-      <p class="bannana">Sign up</p>
-      <% end %>
+        <%= link_to new_user_session_path do %>
+          <div class="bannana">
+            <p>Sign up</p>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

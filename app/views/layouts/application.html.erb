@@ -22,22 +22,28 @@
   </head>
 
   <body>
-    <% if current_page?(root_path) %>
-      <%= render 'shared/navbar', style_class: "home_nav"  %>
-      <%= render 'shared/banner'%>
-    <% else %>
-      <%= render 'shared/navbar', style_class: "" %>
-    <% end %>
-    <%= render 'shared/flashes' %>
-    <% if current_page?(profile_path) %>
-     <%= yield %>
-    <% else %>
-      <div class="page-content">
-        <%= yield %>
+    <div id="page-container">
+
+      <div id="content-wrap">
+        <% if current_page?(root_path) %>
+          <%= render 'shared/navbar', style_class: "home_nav"  %>
+          <%= render 'shared/banner'%>
+        <% else %>
+          <%= render 'shared/navbar', style_class: "" %>
+        <% end %>
+        <%= render 'shared/flashes' %>
+        <% if current_page?(profile_path) %>
+         <%= yield %>
+        <% else %>
+          <div class="page-content">
+            <%= yield %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-    <div class="footer" id="footer">
-        <%= render 'shared/footer' %>
-    </div>
+
+      <div class="footer" id="footer">
+          <%= render 'shared/footer' %>
+      </div>
+  </div>
   </body>
 </html>

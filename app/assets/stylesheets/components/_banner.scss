@@ -10,7 +10,7 @@
 }
 
 .banner-text {
-  position: relative;
+  position: absolute;
   top: 44vh;
   left: 30px;
 }
@@ -37,3 +37,22 @@
 .banner-spacer {
   height: calc( 95vh - 120px);
 }
+
+@media(max-width: 500px) {
+  .banner {
+    height: 620px;
+  }
+  .banner-spacer {
+    height: 410px;
+  }
+  .banner-text {
+    width: 100vw;
+    left: 0px;
+    top: 30vh;
+    padding-left: 8px;
+    // h2 {
+    // font-size: 8px;
+    // }
+  }
+}
+

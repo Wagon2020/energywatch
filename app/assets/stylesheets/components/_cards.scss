@@ -41,6 +41,15 @@
   color: $ew-darkgrey;
 }
 
+@media(max-width: 1000px) {
+  .home {
+    height: 100%;
+    width: 100vw;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+
 .details {
   text-align: center;
 }

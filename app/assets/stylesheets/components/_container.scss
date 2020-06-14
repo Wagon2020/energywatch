@@ -6,8 +6,32 @@
 
 
 .home-container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  // flex-direction: column-reverse;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-items: center;
+  // display: flex;
+  // justify-content: space-around;
   margin-top: 30px;
   margin-bottom: 100px;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 80px;    /* Footer height */
+}
+
+
+
+@media(max-width: 1000px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    width: 100vw;
+    height: 100%;
+  }
 }

@@ -4,6 +4,8 @@
   margin-top: 30px;
 }
 
+
+
 .donut-container {
   position: relative;
 }
@@ -38,13 +40,15 @@
 
 }
 
+
 .renewable-share {
   position: absolute;
-  top: 240px;
-  left: 205px;
+  // max-width: 400px;
+  top: 220px;
+  left: 144px;
   text-align: center;
   color: #575e5c;
-  z-index: 1.1;
+  z-index: 122;
 }
 
 .renewable-share-details {
@@ -67,4 +71,32 @@
 #chart-donut {
   position: relative;
   z-index: 0.9;
+}
+
+@media(max-width: 1000px) {
+  .donut-frame {
+    width: 375px;
+    // margin: 0 auto;
+    height: 500px;
+  }
+  .background-card {
+    width: 0;
+  }
+  .donut {
+    // padding-left: 8px;
+    width: 100%;
+    right: 0;
+  }
+  .overlay {
+    width: 100%;
+  }
+  #chart-donut {
+    // position: absolute;
+    width: 375px;
+    margin: 0 auto;
+  }
+  .renewable-share {
+    top: 210px;
+    left: 132px;
+  }
 }

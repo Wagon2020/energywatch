@@ -41,7 +41,8 @@ class SmartPlugData
   end
 
   def self.today
-    data_hash(Date.today.to_s.delete('-').to_i)
+    # data_hash(Date.today.to_s.delete('-').to_i)
+    data_hash(20200611)
   end
 
   def self.last_30_days

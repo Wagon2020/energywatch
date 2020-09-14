@@ -91,7 +91,9 @@ class SmartPlugData
   private
 
   def self.data_hash(date)
-    result = SmartPlug.where(todays_date: date)[0].daily_hash
+    # result = SmartPlug.where(todays_date: date)[0].daily_hash
+    # CHANGED THIS LINE TO STATIC, SINCE THERE IS NO MORE DATA COMMING:
+    result = SmartPlug.where(todays_date: 20200617)[0].daily_hash
     JSON(result)
   end
 
